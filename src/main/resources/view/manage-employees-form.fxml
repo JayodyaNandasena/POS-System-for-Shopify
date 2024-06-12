@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageEmployeesFormController">
+   <children>
+      <HBox layoutX="139.0" layoutY="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxWidth="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="124.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="SOMETIMES">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../img/Logo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label onMouseClicked="#navDashbordOnClick" text="Dashboard">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label onMouseClicked="#navPlaceOrderOnClick" text="Place Order">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navReturnItemsOnClick" text="Return Items">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navProductsOnClick" text="Products">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navSuppliersOnClick" text="Suppliers">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Employees">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label onMouseClicked="#navReportsOnClick" text="Reports">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="451.0" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Employee List">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="7.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="144.0" prefWidth="444.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn prefWidth="58.22222954034805" text="ID" />
+                      <TableColumn prefWidth="92.0000114440918" text="Name" />
+                        <TableColumn prefWidth="75.0" text="Address" />
+                        <TableColumn prefWidth="75.0" text="Mobile" />
+                        <TableColumn prefWidth="101.7777099609375" text="Email" />
+                        <TableColumn prefWidth="62.2222900390625" text="Status" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Label text="Manage Employees">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane prefHeight="131.0" prefWidth="471.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="91.99999703301324" minWidth="10.0" prefWidth="70.66669760810004" />
+                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="163.11112467447916" minWidth="10.0" prefWidth="154.66663572523328" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="67.99999321831598" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="158.111083984375" minWidth="10.0" prefWidth="150.22222222222223" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Employee Id">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="First Name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Last Name" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Address" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Mobile" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Email" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtLastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtMobile" minWidth="-Infinity" prefHeight="25.0" prefWidth="139.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtPassword" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="txtEmpId" prefHeight="25.0" prefWidth="105.0" />
+                              <JFXButton onAction="#btnSerchOnAction" prefWidth="70.0" style="-fx-background-color: #000000;" text="Search" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="471.0">
+                     <children>
+                        <JFXButton onAction="#btnAddOnAction" prefWidth="70.0" style="-fx-background-color: #0066FF;" text="Add" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#btnUpdateOnAction" prefWidth="70.0" style="-fx-background-color: #006F1F;" text="Update" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#btnDeleteOnAction" prefWidth="70.0" style="-fx-background-color: #E73700;" text="Delete" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
