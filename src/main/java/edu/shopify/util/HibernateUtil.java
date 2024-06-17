@@ -1,6 +1,7 @@
 package edu.shopify.util;
 
 import edu.shopify.entity.EmployeeEntity;
+import edu.shopify.entity.SupplierEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -19,7 +20,7 @@ public class HibernateUtil {
 
         Metadata metaData = new MetadataSources(build)
                 .addAnnotatedClass(EmployeeEntity.class)
-                //.addAnnotatedClass(CustomerEntity.class) //can pass multiple entities
+                .addAnnotatedClass(SupplierEntity.class) //can pass multiple entities
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

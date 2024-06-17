@@ -4,6 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <!-- Database connection settings -->
         <property name="connection.url">
             jdbc:mysql://localhost:3306/shopify?createDatabaseIfNotExist=true
         </property>
@@ -12,10 +13,15 @@
         </property>
         <property name="connection.username">root</property>
         <property name="connection.password">1234</property>
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
         <!-- DB schema will be updated if needed -->
+        <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
     </session-factory>
 </hibernate-configuration>

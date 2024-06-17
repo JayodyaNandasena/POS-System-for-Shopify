@@ -21,6 +21,9 @@ public class LoginFormController {
 
     private EmployeeBo employeeBo = BoFactory.getInstance().getBo(BoType.EMPLOYEE);
 
+    public LoginFormController() throws Exception {
+    }
+
     public void btnLoginOnAction(ActionEvent actionEvent) {
 
         String email = txtEmail.getText();
@@ -65,6 +68,8 @@ public class LoginFormController {
         }catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter Login Credentials! null");
             alert.show();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
 

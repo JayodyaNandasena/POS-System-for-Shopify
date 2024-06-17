@@ -16,9 +16,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageEmployeesFormController">
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageSuppliersFormController">
    <children>
-      <HBox layoutX="139.0" layoutY="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="149.0" layoutY="110.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox maxWidth="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="124.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="SOMETIMES">
                <children>
@@ -68,15 +69,7 @@
                               <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label onMouseClicked="#navSuppliersOnClick" text="Suppliers">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Employees">
+                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Supplers">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -86,6 +79,14 @@
                            <padding>
                               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                            </padding>
+                        </Label>
+                        <Label onMouseClicked="#navSuppliersOnClick" text="Employees">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
                         </Label>
                         <Label onMouseClicked="#navReportsOnClick" text="Reports">
                            <font>
@@ -104,7 +105,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="451.0" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Employee List">
+                  <Label text="Available Suppliers List">
                      <VBox.margin>
                         <Insets bottom="5.0" left="7.0" right="5.0" top="10.0" />
                      </VBox.margin>
@@ -112,19 +113,20 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tblEmployees" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="144.0" prefWidth="444.0" VBox.vgrow="ALWAYS">
-                    <columns>
-                      <TableColumn fx:id="colId" prefWidth="58.22222954034805" text="ID" />
-                      <TableColumn fx:id="colName" prefWidth="92.0000114440918" text="Name" />
-                        <TableColumn fx:id="colAddress" prefWidth="75.0" text="Address" />
-                        <TableColumn fx:id="colMobile" prefWidth="75.0" text="Mobile" />
-                        <TableColumn fx:id="colEmail" prefWidth="101.7777099609375" text="Email" />
-                    </columns>
+                  <TableView fx:id="tblSuppliers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="144.0" prefWidth="444.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="colId" prefWidth="58.22222954034805" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="92.0000114440918" text="Name" />
+                        <TableColumn fx:id="colCompany" prefWidth="86.66668701171875" text="Company" />
+                        <TableColumn fx:id="colNIC" prefWidth="86.22222900390625" text="NIC" />
+                        <TableColumn fx:id="colMobile" prefWidth="77.33331298828125" text="Mobile" />
+                        <TableColumn fx:id="colEmail" prefWidth="86.66668701171875" text="Email" />
+                     </columns>
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>
                   </TableView>
-                  <Label text="Manage Employees">
+                  <Label text="Manage Suppliers">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -133,35 +135,35 @@
                      </VBox.margin>
                   </Label>
                   <GridPane prefHeight="131.0" prefWidth="471.0">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="91.99999703301324" minWidth="10.0" prefWidth="70.66669760810004" />
-                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="163.11112467447916" minWidth="10.0" prefWidth="154.66663572523328" />
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="91.99999703301324" minWidth="10.0" prefWidth="70.66669760810004" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="163.11112467447916" minWidth="10.0" prefWidth="154.66663572523328" />
                         <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="67.99999321831598" />
                         <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="158.111083984375" minWidth="10.0" prefWidth="150.22222222222223" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <Label prefHeight="17.0" prefWidth="70.0" text="Employee Id">
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Supplier Id">
                            <GridPane.margin>
                               <Insets left="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="First Name" GridPane.rowIndex="1">
+                        <Label text="Name" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Last Name" GridPane.rowIndex="2">
+                        <Label text="Company" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Address" GridPane.rowIndex="3">
+                        <Label text="NIC" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="5.0" />
                            </GridPane.margin>
@@ -176,14 +178,9 @@
                               <Insets left="5.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                           <GridPane.margin>
-                              <Insets left="5.0" />
-                           </GridPane.margin>
-                        </Label>
-                        <TextField fx:id="txtFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtLastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtCompany" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtNIC" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="txtMobile" minWidth="-Infinity" prefHeight="25.0" prefWidth="139.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets right="5.0" />
@@ -194,14 +191,9 @@
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField fx:id="txtPassword" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                           <GridPane.margin>
-                              <Insets right="5.0" />
-                           </GridPane.margin>
-                        </TextField>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <TextField fx:id="txtEmpId" prefHeight="25.0" prefWidth="105.0" />
+                              <TextField fx:id="txtSupplierId" prefHeight="25.0" prefWidth="105.0" />
                               <JFXButton onAction="#btnSearchOnAction" prefWidth="70.0" style="-fx-background-color: #000000;" text="Search" textFill="WHITE">
                                  <HBox.margin>
                                     <Insets left="3.0" />

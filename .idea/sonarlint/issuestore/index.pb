@@ -41,3 +41,17 @@ w
 Gsrc/main/java/edu/shopify/controller/ManageEmployeesFormController.java,9\d\9d97ccc91786b281436271065cf152e71ee62646
 Y
 )src/main/java/edu/shopify/bo/SuperBo.java,1\9\198f1f4761bd57619b5de1d6cc1d7c77f6d34e56
+T
+$src/main/java/dto/tm/EmployeeTM.java,a\5\a5b599d9c69c44263b4412d61049c650b1c772ec
+w
+Gsrc/main/java/edu/shopify/controller/ManageSuppliersFormController.java,1\1\11970eedd78df5ad5275bd17f9400f0ec518807e
+d
+4src/main/java/edu/shopify/entity/SupplierEntity.java,7\0\70155ea894d1763dad73d1933d007ff8be4c49c3
+\
+,src/main/java/edu/shopify/util/CrudUtil.java,2\2\2277be8e9f106e5619ad22f1904a1be4d6e32eca
+^
+.src/main/java/edu/shopify/db/DBConnection.java,4\6\46c3d348fa7b208fab1bdf420ff07a581f95789a
+`
+0src/main/java/edu/shopify/dto/tm/EmployeeTM.java,0\5\056bcf77c0457928d6f6b8e98db3b02436488d93
+[
++src/main/java/edu/shopify/dto/Employee.java,f\6\f608d1dfa9457158d50526baf5d9512861d397fe

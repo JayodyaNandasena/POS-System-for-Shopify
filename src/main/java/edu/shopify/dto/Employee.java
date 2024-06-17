@@ -1,4 +1,4 @@
-package dto;
+package edu.shopify.dto;
 
 import lombok.*;
 

@@ -12,7 +12,7 @@ public class BoFactory {
     }
 
 
-    public <T extends SuperBo>T getBo(BoType type){
+    public <T extends SuperBo>T getBo(BoType type) throws Exception {
         switch(type){
             case EMPLOYEE: return (T) new EmployeeBoImpl();
         }

@@ -3,8 +3,10 @@ package edu.shopify.dao.custom.impl;
 import edu.shopify.dao.custom.EmployeeDao;
 import edu.shopify.entity.EmployeeEntity;
 import edu.shopify.util.HibernateUtil;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import org.hibernate.HibernateException;
 import org.hibernate.IdentifierLoadAccess;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -19,27 +21,41 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Session session = HibernateUtil.getsession();
         session.getTransaction().begin();
 
-        session.persist(entity);
-
-        session.getTransaction().commit();
-        session.close();
-
-        return true;
+        try {
+            session.persist(entity);
+            session.getTransaction().commit();
+            return true;
+        } catch (HibernateException e) {
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override
-    public ObservableList<EmployeeEntity> getAll() {
-        return null;
+    public List<EmployeeEntity> getAll() {
+        Session session = HibernateUtil.getsession();
+        session.beginTransaction();
+        Query<EmployeeEntity> query = session.createQuery("from EmployeeEntity where isActive = true", EmployeeEntity.class);
+        List<EmployeeEntity> employees = query.getResultList();
+        session.getTransaction().commit();
+        session.close();
+        return employees;
     }
 
     @Override
     public EmployeeEntity searchById(String id) {
         Session session = HibernateUtil.getsession();
         session.getTransaction().begin();
-        EmployeeEntity employeeEntity = session.get(EmployeeEntity.class, id);
-        session.getTransaction().commit();
-        session.close();
-        return employeeEntity;
+        try{
+            EmployeeEntity employeeEntity = session.get(EmployeeEntity.class, id);
+            session.getTransaction().commit();
+            return employeeEntity;
+        } catch (HibernateException e) {
+            return null;
+        }finally {
+            session.close();
+        }
     }
 
     @Override
