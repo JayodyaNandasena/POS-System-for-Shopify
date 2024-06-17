@@ -11,4 +11,5 @@ public interface EmployeeBo extends SuperBo {
     Employee searchEmployee(String id) throws Exception;
     Boolean updateEmployee(Employee employee);
     Boolean deleteEmployee(String id);
+    Boolean readdEmployee(String id);
 }

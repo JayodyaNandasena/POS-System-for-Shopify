@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageSuppliersFormController">
    <children>
       <HBox layoutX="149.0" layoutY="110.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -69,7 +68,7 @@
                               <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Supplers">
+                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Suppliers">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -80,7 +79,7 @@
                               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                            </padding>
                         </Label>
-                        <Label onMouseClicked="#navSuppliersOnClick" text="Employees">
+                        <Label onMouseClicked="#navEmployeesOnClick" text="Employees">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -220,6 +219,7 @@
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </JFXButton>
+                        <JFXButton fx:id="btnAddAgain" disable="true" onAction="#btnAddAgainOnAction" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #68BBE3;" text="Add Again" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

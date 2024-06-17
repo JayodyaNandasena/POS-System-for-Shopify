@@ -63,6 +63,11 @@ public class EmployeeBoImpl implements EmployeeBo {
     public Boolean deleteEmployee(String id) {
         return employeeDao.delete(id);
     }
+
+    @Override
+    public Boolean readdEmployee(String id) {
+        return employeeDao.readd(id);
+    }
 /*
     private static final String ALGORITHM = "AES";
     private static final String KEY = "encryptedpassword";

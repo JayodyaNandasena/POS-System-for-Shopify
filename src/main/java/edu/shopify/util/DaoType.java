@@ -1,5 +1,5 @@
 package edu.shopify.util;
 
 public enum DaoType {
-    EMPLOYEE
+    EMPLOYEE, SUPPLIER
 }

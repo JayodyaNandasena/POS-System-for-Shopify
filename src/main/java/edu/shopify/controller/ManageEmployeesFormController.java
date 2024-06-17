@@ -1,5 +1,7 @@
 package edu.shopify.controller;
 
+import com.jfoenix.controls.JFXButton;
+import edu.shopify.db.StageManager;
 import edu.shopify.dto.Employee;
 import edu.shopify.dto.tm.EmployeeTM;
 import edu.shopify.bo.BoFactory;
@@ -8,15 +10,21 @@ import edu.shopify.util.BoType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ManageEmployeesFormController implements Initializable {
@@ -34,6 +42,7 @@ public class ManageEmployeesFormController implements Initializable {
     public TableColumn colMobile;
     public TableColumn colEmail;
     public TableView tblEmployees;
+    public JFXButton btnAddAgain;
     private EmployeeBo employeeBo = BoFactory.getInstance().getBo(BoType.EMPLOYEE);
 
     public ManageEmployeesFormController() throws Exception {
@@ -66,9 +75,15 @@ public class ManageEmployeesFormController implements Initializable {
         txtEmail.setText(employee.getEmail());
         txtPassword.setText(employee.getPassword());
 
+        if (employee.getIsActive() == false){
+            btnAddAgain.setDisable(false);
+        }else{
+            btnAddAgain.setDisable(true);
+        }
+
     }
 
-    public void btnAddOnAction(ActionEvent actionEvent) throws Exception {
+    public void btnAddOnAction(ActionEvent actionEvent){
         Employee employee = new Employee(
                 txtEmpId.getText(),
                 txtFirstName.getText(),
@@ -78,19 +93,19 @@ public class ManageEmployeesFormController implements Initializable {
                 txtEmail.getText(),
                 txtPassword.getText(),
                 true
-                );
+        );
 
-        if(Boolean.TRUE.equals(employeeBo.saveEmployee(employee))){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("Employee Added Successfully!");
+        try{
+           if(Boolean.TRUE.equals(employeeBo.saveEmployee(employee))){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Employee Added Successfully!");
+                alert.show();
+                loadTable();
+            }
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Employee Id Already Exists!");
             alert.show();
-            loadTable();
-            return;
         }
-
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Employee Id Already Exists!");
-        alert.show();
-
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -118,7 +133,7 @@ public class ManageEmployeesFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        if(employeeBo.deleteEmployee(txtEmpId.getText())){
+        if(Boolean.TRUE.equals(employeeBo.deleteEmployee(txtEmpId.getText()))){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Employee Deleted Successfully!");
             alert.show();
@@ -128,6 +143,20 @@ public class ManageEmployeesFormController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText("Error deleting employee!");
         alert.show();
+    }
+    public void btnAddAgainOnAction(ActionEvent actionEvent) {
+        if(employeeBo.readdEmployee(txtEmpId.getText())){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Employee Added Successfully!");
+            alert.show();
+            loadTable();
+            btnAddAgain.setDisable(true);
+            return;
+        }
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("Error adding employee!");
+        alert.show();
+        btnAddAgain.setDisable(true);
     }
 
     private void loadTable(){
@@ -165,10 +194,32 @@ public class ManageEmployeesFormController implements Initializable {
     }
 
     public void navSuppliersOnClick(MouseEvent mouseEvent) {
+        Stage currentStage= StageManager.getCurrentStage();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/manage-suppliers-form.fxml"));
+        Parent root;
+        try {
+            root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            if (currentStage != null) {
+                currentStage.close(); // Close the current stage if it exists
+            }
+
+            StageManager.setCurrentStage(stage);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.show();
+            System.out.println(e.getMessage());
+        }
     }
 
     public void navReportsOnClick(MouseEvent mouseEvent) {
     }
+
 
 
 }

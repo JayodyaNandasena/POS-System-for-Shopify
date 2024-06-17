@@ -1,7 +1,5 @@
-package edu.shopify.entity;
+package edu.shopify.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.*;
 
 @NoArgsConstructor
@@ -9,9 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@Entity
-public class SupplierEntity {
-    @Id
+public class Supplier {
     private String supplierId;
     private String name;
     private String nic;

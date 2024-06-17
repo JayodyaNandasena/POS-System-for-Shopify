@@ -97,4 +97,15 @@ public class EmployeeDaoImpl implements EmployeeDao {
         return employee != null;
     }
 
+    @Override
+    public Boolean readd(String id) {
+        Session session = HibernateUtil.getsession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("UPDATE EmployeeEntity SET isActive = true WHERE id = :id");
+        query.setParameter("id", id);
+        int rowCount = query.executeUpdate();
+        session.getTransaction().commit();
+        return rowCount > 0;
+    }
+
 }

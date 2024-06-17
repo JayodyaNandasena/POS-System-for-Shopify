@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageEmployeesFormController">
+<AnchorPane prefHeight="450.0" prefWidth="650.0" styleClass="background" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ManageEmployeesFormController">
    <children>
       <HBox layoutX="139.0" layoutY="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -104,7 +104,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="451.0" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Employee List">
+                  <Label text="Active Employee List">
                      <VBox.margin>
                         <Insets bottom="5.0" left="7.0" right="5.0" top="10.0" />
                      </VBox.margin>
@@ -112,13 +112,13 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tblEmployees" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="144.0" prefWidth="444.0" VBox.vgrow="ALWAYS">
+                  <TableView fx:id="tblEmployees" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="179.0" prefWidth="511.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn fx:id="colId" prefWidth="58.22222954034805" text="ID" />
-                      <TableColumn fx:id="colName" prefWidth="92.0000114440918" text="Name" />
-                        <TableColumn fx:id="colAddress" prefWidth="75.0" text="Address" />
-                        <TableColumn fx:id="colMobile" prefWidth="75.0" text="Mobile" />
-                        <TableColumn fx:id="colEmail" prefWidth="101.7777099609375" text="Email" />
+                      <TableColumn fx:id="colId" prefWidth="75.55554115772247" text="ID" />
+                      <TableColumn fx:id="colName" prefWidth="152.00000762939453" text="Name" />
+                        <TableColumn fx:id="colAddress" minWidth="8.00006103515625" prefWidth="119.55560302734375" text="Address" />
+                        <TableColumn fx:id="colMobile" prefWidth="71.11117553710938" text="Mobile" />
+                        <TableColumn fx:id="colEmail" prefWidth="91.99996609157984" text="Email" />
                     </columns>
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" />
@@ -132,7 +132,7 @@
                         <Insets left="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <GridPane prefHeight="131.0" prefWidth="471.0">
+                  <GridPane prefHeight="140.0" prefWidth="471.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="91.99999703301324" minWidth="10.0" prefWidth="70.66669760810004" />
                       <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="163.11112467447916" minWidth="10.0" prefWidth="154.66663572523328" />
@@ -228,6 +228,7 @@
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </JFXButton>
+                        <JFXButton fx:id="btnAddAgain" disable="true" onAction="#btnAddAgainOnAction" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #68BBE3;" text="Add Again" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

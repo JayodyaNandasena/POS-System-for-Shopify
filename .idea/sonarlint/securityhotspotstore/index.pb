@@ -17,8 +17,6 @@ Z
 *src/main/java/edu/shopify/util/BoType.java,b\9\b9c08a305efcea68274d00b96b070d877a3e7de0
 d
 4src/main/java/edu/shopify/entity/EmployeeEntity.java,4\5\4543b9041369fd8869452eceeb9a5c878bb3e826
-O
-src/main/java/dto/Employee.java,1\4\14dece4e2bf822f45ce955f93d22687b6309072a
 l
 <src/main/java/edu/shopify/bo/custom/impl/EmployeeBoImpl.java,6\9\697e9114e3b257e68bc0287a54ad75bd3e8da5f1
 c
@@ -41,8 +39,6 @@ w
 Gsrc/main/java/edu/shopify/controller/ManageEmployeesFormController.java,9\d\9d97ccc91786b281436271065cf152e71ee62646
 Y
 )src/main/java/edu/shopify/bo/SuperBo.java,1\9\198f1f4761bd57619b5de1d6cc1d7c77f6d34e56
-T
-$src/main/java/dto/tm/EmployeeTM.java,a\5\a5b599d9c69c44263b4412d61049c650b1c772ec
 w
 Gsrc/main/java/edu/shopify/controller/ManageSuppliersFormController.java,1\1\11970eedd78df5ad5275bd17f9400f0ec518807e
 d
@@ -55,3 +51,15 @@ d
 0src/main/java/edu/shopify/dto/tm/EmployeeTM.java,0\5\056bcf77c0457928d6f6b8e98db3b02436488d93
 [
 +src/main/java/edu/shopify/dto/Employee.java,f\6\f608d1dfa9457158d50526baf5d9512861d397fe
+c
+3src/main/java/edu/shopify/bo/custom/SupplierBo.java,6\e\6e98689fabe2f10f624511c1c2ceb4d5641a2e59
+[
++src/main/java/edu/shopify/dto/Supplier.java,5\6\5621ab89519ee08f550247aefd47ba959c0c84d1
+l
+<src/main/java/edu/shopify/bo/custom/impl/SupplierBoImpl.java,2\b\2be3bcfd9561931f5c90441cd992565bde68977f
+e
+5src/main/java/edu/shopify/dao/custom/SupplierDao.java,5\2\526f7e99ed0397965237800b764a1fad66958d00
+n
+>src/main/java/edu/shopify/dao/custom/impl/SupplierDaoImpl.java,f\3\f3b20f3be64c1ceadd024d101cb4ff12dd9eef7d
+`
+0src/main/java/edu/shopify/dto/tm/SupplierTM.java,5\3\530a04778e89b79440732d732511a318fb9e182b
