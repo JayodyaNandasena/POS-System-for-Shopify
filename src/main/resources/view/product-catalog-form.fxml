@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ProductCatalogFormController">
+   <children>
+      <HBox layoutX="159.0" layoutY="120.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxWidth="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="124.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="SOMETIMES">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../img/Logo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label onMouseClicked="#navDashbordOnClick" text="Dashboard">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label onMouseClicked="#navPlaceOrderOnClick" text="Place Order">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navReturnItemsOnClick" text="Return Items">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #F3F3F3;" styleClass="active-nav" stylesheets="@../css/Styles.css" text="Products">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="7.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label onMouseClicked="#navSuppliersOnClick" text="Suppliers">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navEmployeesOnClick" text="Employees">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label onMouseClicked="#navReportsOnClick" text="Reports">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="7.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="451.0" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="502.0" style="-fx-background-color: #ffffff;" stylesheets="@../css/Styles.css">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.111083984375" minWidth="10.0" prefWidth="104.44442409939236" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.7777557373047" minWidth="10.0" prefWidth="194.66668701171872" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Product Id" />
+                        <Label text="Name" GridPane.rowIndex="1" />
+                        <Label text="Size" GridPane.rowIndex="2" />
+                        <Label text="Category" GridPane.rowIndex="3" />
+                        <Label text="Supplier" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtId" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cmbCategory" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbSupplier" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="cmbSize" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="103.0" text="Image" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <GridPane layoutX="10.0" layoutY="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.11114501953125" minWidth="10.0" prefWidth="104.55555725097656" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.44444274902344" minWidth="10.0" prefWidth="193.44444274902344" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Quantity In Stock" GridPane.rowIndex="1" />
+                        <Label text="Retail Price" GridPane.rowIndex="2" />
+                        <Label text="Wholesale Price" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtQty" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtRetailPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtWholesalePrice" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ImageView fx:id="imgImage" fitHeight="150.0" fitWidth="191.0" onMouseClicked="#imgImageClickOnAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../img/gallery.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="471.0">
+                     <children>
+                        <JFXButton onAction="#btnAddOnAction" prefWidth="70.0" style="-fx-background-color: #0066FF;" text="Add" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#btnUpdateOnAction" prefWidth="70.0" style="-fx-background-color: #006F1F;" text="Update" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#btnDeleteOnAction" prefWidth="70.0" style="-fx-background-color: #E73700;" text="Delete" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAddAgain" disable="true" onAction="#btnAddAgainOnAction" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #68BBE3;" text="Add Again" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

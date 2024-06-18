@@ -1,7 +1,7 @@
 package edu.shopify.dao.custom.impl;
 
-import edu.shopify.dao.custom.EmployeeDao;
-import edu.shopify.entity.EmployeeEntity;
+import edu.shopify.dao.custom.ProductDao;
+import edu.shopify.entity.ProductEntity;
 import edu.shopify.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,9 +9,9 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class EmployeeDaoImpl implements EmployeeDao {
+public class ProductDaoImpl implements ProductDao {
     @Override
-    public Boolean add(EmployeeEntity entity) {
+    public Boolean add(ProductEntity entity) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
 
@@ -27,25 +27,24 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public List<EmployeeEntity> getAll() {
-
+    public List<ProductEntity> getAll() {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Query<EmployeeEntity> query = session.createQuery("from EmployeeEntity where isActive = true", EmployeeEntity.class);
-        List<EmployeeEntity> employees = query.getResultList();
+        Query<ProductEntity> query = session.createQuery("from ProductEntity where isActive = true", ProductEntity.class);
+        List<ProductEntity> products = query.getResultList();
         session.getTransaction().commit();
         session.close();
-        return employees;
+        return products;
     }
 
     @Override
-    public EmployeeEntity searchById(String id) {
+    public ProductEntity searchById(String id) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
         try{
-            EmployeeEntity employeeEntity = session.get(EmployeeEntity.class, id);
+            ProductEntity productEntity = session.get(ProductEntity.class, id);
             session.getTransaction().commit();
-            return employeeEntity;
+            return productEntity;
         } catch (HibernateException e) {
             return null;
         }finally {
@@ -54,10 +53,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public Boolean update(EmployeeEntity employeeEntity) {
+    public Boolean update(ProductEntity productEntity) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
-        session.merge(employeeEntity);
+        session.merge(productEntity);
         session.getTransaction().commit();
         session.close();
         return true;
@@ -67,36 +66,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Boolean delete(String id) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("UPDATE EmployeeEntity SET isActive = false WHERE id = :id");
+        Query query = session.createQuery("UPDATE ProductEntity SET isActive = false WHERE id = :id");
         query.setParameter("id", id);
         int rowCount = query.executeUpdate();
         session.getTransaction().commit();
         return rowCount > 0;
     }
 
-    @Override
-    public Boolean validateLogin(String email, String password) {
-        Session session = HibernateUtil.getSession();
-        session.getTransaction().begin();
-
-        Query<EmployeeEntity> query = session.createQuery(
-                "FROM EmployeeEntity WHERE email = :email AND password = :password", EmployeeEntity.class);
-        query.setParameter("email", email);
-        query.setParameter("password", password);
-
-        EmployeeEntity employee = query.uniqueResult();
-
-        session.getTransaction().commit();
-        session.close();
-
-        return employee != null;
-    }
 
     @Override
     public Boolean readd(String id) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("UPDATE EmployeeEntity SET isActive = true WHERE id = :id");
+        Query query = session.createQuery("UPDATE ProductEntity SET isActive = true WHERE id = :id");
         query.setParameter("id", id);
         int rowCount = query.executeUpdate();
         session.getTransaction().commit();

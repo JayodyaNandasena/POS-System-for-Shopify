@@ -1,6 +1,8 @@
 package edu.shopify.bo;
 
+import edu.shopify.bo.custom.impl.CategoryBoImpl;
 import edu.shopify.bo.custom.impl.EmployeeBoImpl;
+import edu.shopify.bo.custom.impl.ProductBoImpl;
 import edu.shopify.bo.custom.impl.SupplierBoImpl;
 import edu.shopify.util.BoType;
 
@@ -17,6 +19,8 @@ public class BoFactory {
         switch(type){
             case EMPLOYEE: return (T) new EmployeeBoImpl();
             case SUPPLIER: return (T) new SupplierBoImpl();
+            case CATEGORY: return (T) new CategoryBoImpl();
+            case PRODUCT: return (T) new ProductBoImpl();
         }
         return null;
     }

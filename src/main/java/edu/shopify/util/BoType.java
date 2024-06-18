@@ -1,5 +1,5 @@
 package edu.shopify.util;
 
 public enum BoType {
-    EMPLOYEE, SUPPLIER
+    EMPLOYEE, SUPPLIER, CATEGORY, PRODUCT
 }

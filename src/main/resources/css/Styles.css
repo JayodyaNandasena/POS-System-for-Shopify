@@ -29,6 +29,10 @@
     -fx-background-radius: 10px;
 }
 
+.select-image{
+    -fx-background-image: url(../img/gallery.png);
+}
+
 .btn{
     -fx-background-color: #0147d4;
     -fx-text-fill: white;

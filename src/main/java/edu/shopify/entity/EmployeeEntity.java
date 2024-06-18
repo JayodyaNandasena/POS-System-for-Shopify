@@ -20,5 +20,5 @@ public class EmployeeEntity {
     private String mobile;
     private String email;
     private String password;
-    private  Boolean isActive;
+    private Boolean isActive;
 }
