@@ -15,7 +15,7 @@ public class Product {
     private String size;
     private Category category;
     private Supplier supplier;
-    //private byte[] image;
+    private byte[] image;
     private Double retailPrice;
     private Double wholesalePrice;
     private Integer qtyInStock;

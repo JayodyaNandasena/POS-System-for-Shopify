@@ -103,3 +103,9 @@ e
 5src/main/java/edu/shopify/dao/custom/CustomerDao.java,a\2\a2973762e057ba26e7b13916287833d037786541
 n
 >src/main/java/edu/shopify/dao/custom/impl/CustomerDaoImpl.java,f\b\fb88cec4b4f9fb2048072d3601b5485286ee0d7b
+{
+Ksrc/main/java/edu/shopify/controller/item/productCatalogItemController.java,b\b\bbd35c9c575d82eeb13e50b3866ec34f0497a880
+{
+Ksrc/main/java/edu/shopify/controller/item/ProductCatalogItemController.java,f\7\f7ddb6f572981d089150d86643df5c8887c5529c
+~
+Nsrc/main/java/edu/shopify/controller/item/PlaceOrderProductItemController.java,6\5\65fdf58597acdd5b1cbdfb6add7371d2e19aa138

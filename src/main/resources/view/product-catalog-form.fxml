@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,10 +16,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ProductCatalogFormController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="transparent" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.ProductCatalogFormController">
    <children>
-      <HBox layoutX="159.0" layoutY="120.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="159.0" layoutY="120.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox maxWidth="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="124.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="SOMETIMES">
                <children>
@@ -102,10 +102,32 @@
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="451.0" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+            <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="564.0" styleClass="transparent" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </padding>
+               <children>
+                  <Label text="Product Catalog">
+                     <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane fx:id="scrlProducts" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="454.0" prefWidth="309.0" styleClass="transparent" stylesheets="@../css/Styles.css">
+                     <VBox.margin>
+                        <Insets right="5.0" />
+                     </VBox.margin>
+                     <content>
+                        <GridPane fx:id="gridProducts" prefHeight="0.0" prefWidth="0.0" styleClass="transparent" stylesheets="@../css/Styles.css">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="502.0" style="-fx-background-color: #ffffff;" stylesheets="@../css/Styles.css">
                <children>
@@ -134,18 +156,27 @@
                         <ComboBox fx:id="cmbSize" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <HBox>
+                  <VBox alignment="TOP_CENTER" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="17.0" prefWidth="103.0" text="Image" />
+                        <HBox>
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="103.0" text="Image" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <ImageView fx:id="imgImage" fitHeight="150.0" fitWidth="191.0" onMouseClicked="#imgImageClickOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/gallery.png" />
+                           </image>
+                        </ImageView>
                      </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
+                  </VBox>
                   <GridPane layoutX="10.0" layoutY="10.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.11114501953125" minWidth="10.0" prefWidth="104.55555725097656" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.44444274902344" minWidth="10.0" prefWidth="193.44444274902344" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.11114501953125" minWidth="10.0" prefWidth="96.00003475613065" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.44444274902344" minWidth="10.0" prefWidth="147.11107635498047" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints />
@@ -154,17 +185,12 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="Quantity In Stock" GridPane.rowIndex="1" />
+                        <Label prefHeight="30.0" prefWidth="96.0" text="Quantity In Stock" GridPane.rowIndex="1" />
                         <Label text="Retail Price" GridPane.rowIndex="2" />
                         <Label text="Wholesale Price" GridPane.rowIndex="3" />
-                        <TextField fx:id="txtQty" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtQty" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txtRetailPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="txtWholesalePrice" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <ImageView fx:id="imgImage" fitHeight="150.0" fitWidth="191.0" onMouseClicked="#imgImageClickOnAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-                           <image>
-                              <Image url="@../img/gallery.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </GridPane>
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="471.0">

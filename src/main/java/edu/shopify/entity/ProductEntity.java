@@ -2,6 +2,7 @@ package edu.shopify.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
@@ -22,7 +23,8 @@ public class ProductEntity {
     private CategoryEntity category;
     @ManyToOne
     private SupplierEntity supplier;
-    //private Blob image;
+    @Lob
+    private byte[] image;
     private Double retailPrice;
     private Double wholesalePrice;
     private Integer qtyInStock;

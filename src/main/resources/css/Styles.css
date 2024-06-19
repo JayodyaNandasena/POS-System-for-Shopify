@@ -33,6 +33,29 @@
     -fx-background-image: url(../img/gallery.png);
 }
 
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.btn-add{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #FE724C;
+    -fx-font-weight: bold;
+    -fx-border-color: #FE724C;
+    -fx-border-radius: 5px;
+}
+.item-border{
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
+.editbutton{
+    -fx-background-color: #FE724C;
+    -fx-background-image: url(../img/edit.png);
+    /* //-fx-graphic: url(../img/edit.png); */
+}
+
 .btn{
     -fx-background-color: #0147d4;
     -fx-text-fill: white;

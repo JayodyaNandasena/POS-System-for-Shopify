@@ -1,14 +1,14 @@
 package edu.shopify.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 import edu.shopify.bo.BoFactory;
 import edu.shopify.bo.custom.CategoryBo;
 import edu.shopify.bo.custom.ProductBo;
 import edu.shopify.bo.custom.SupplierBo;
+import edu.shopify.controller.item.PlaceOrderProductItemController;
+import edu.shopify.controller.item.ProductCatalogItemController;
 import edu.shopify.db.StageManager;
 import edu.shopify.dto.Category;
-import edu.shopify.dto.Employee;
 import edu.shopify.dto.Product;
 import edu.shopify.dto.Supplier;
 import edu.shopify.util.BoType;
@@ -17,23 +17,22 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
-import java.sql.Blob;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ProductCatalogFormController implements Initializable {
@@ -49,6 +48,9 @@ public class ProductCatalogFormController implements Initializable {
     public ComboBox cmbCategory;
     public ComboBox cmbSupplier;
     public ComboBox cmbSize;
+    public ScrollPane scrlProducts;
+    public GridPane gridProducts;
+    private List<Product> products = new ArrayList<>();
     private ProductBo productBo = BoFactory.getInstance().getBo(BoType.PRODUCT);
     private CategoryBo categoryBo = BoFactory.getInstance().getBo(BoType.CATEGORY);
     private SupplierBo supplierBo = BoFactory.getInstance().getBo(BoType.SUPPLIER);
@@ -60,6 +62,8 @@ public class ProductCatalogFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadProductCatalog();
+
         loadSizesDropdown();
         try {
             loadSupplierDropdown();
@@ -83,7 +87,7 @@ public class ProductCatalogFormController implements Initializable {
 
                             loadCategoryDropdown();
 
-                            //cmbCategory.setValue(cmbCategory.getItems().get(cmbCategory.getItems().size()-1));
+                            cmbCategory.setValue(cmbCategory.getItems().get(cmbCategory.getItems().size()-2));
 
                             //System.out.println(cmbCategory.getItems().size()-1);
 
@@ -99,6 +103,54 @@ public class ProductCatalogFormController implements Initializable {
 
     }
 
+    private void loadProductCatalog() {
+        products = productBo.getAllProducts();
+
+        if (products.size() > 0) {
+            //setChosenFruit(fruits.get(0));
+//            myListener = new MyListener() {
+//                @Override
+//                public void onClickListener(Fruit fruit) {
+//                    setChosenFruit(fruit);
+//                }
+//            };
+        }
+        int column = 0;
+        int row = 1;
+        try {
+            for (int i = 0; i < products.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/view/item/product-catalog-item.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+
+                ProductCatalogItemController productCatalogItemController = fxmlLoader.getController();
+                productCatalogItemController.setData(products.get(i));
+
+                if (column == 2) {
+                    column = 0;
+                    row++;
+                }
+
+                gridProducts.add(anchorPane, column++, row); //(child,column,row)
+                //set grid width
+                gridProducts.setMinWidth(Region.USE_COMPUTED_SIZE);
+                gridProducts.setPrefWidth(309);
+                gridProducts.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                gridProducts.setMinHeight(Region.USE_COMPUTED_SIZE);
+                gridProducts.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                gridProducts.setMaxHeight(Region.USE_PREF_SIZE);
+
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("caught : "+e.getMessage());
+        }
+    }
+
     public void btnAddOnAction(ActionEvent actionEvent) throws Exception {
         String selectedCategoryId = cmbCategory.getValue().toString().split(" - ")[0];
         Category category = categoryBo.searchCategory(selectedCategoryId);
@@ -112,7 +164,7 @@ public class ProductCatalogFormController implements Initializable {
                 cmbSize.getValue().toString(),
                 category,
                 supplier,
-                //imageByteArray,
+                imageByteArray,
                 Double.parseDouble(txtRetailPrice.getText()),
                 Double.parseDouble(txtWholesalePrice.getText()),
                 Integer.parseInt(txtQty.getText()),
@@ -121,6 +173,7 @@ public class ProductCatalogFormController implements Initializable {
 
         try {
             if (Boolean.TRUE.equals(productBo.saveProduct(product))) {
+                loadProductCatalog();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setContentText("Product Added Successfully!");
                 alert.show();
@@ -132,6 +185,7 @@ public class ProductCatalogFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) throws Exception {
+
         String selectedCategoryId = cmbCategory.getValue().toString().split(" - ")[0];
         Category category = categoryBo.searchCategory(selectedCategoryId);
 
@@ -144,7 +198,7 @@ public class ProductCatalogFormController implements Initializable {
                 cmbSize.getValue().toString(),
                 category,
                 supplier,
-                //imageByteArray,
+                imageByteArray,
                 Double.parseDouble(txtRetailPrice.getText()),
                 Double.parseDouble(txtWholesalePrice.getText()),
                 Integer.parseInt(txtQty.getText()),
@@ -203,6 +257,12 @@ public class ProductCatalogFormController implements Initializable {
             }
         }
     }
+
+    private List<Product> getData(){
+        return productBo.getAllProducts();
+    }
+
+
 
     private byte[] convertImageToByteArray(File file) throws IOException {
         FileInputStream fis = new FileInputStream(file);
@@ -274,6 +334,11 @@ public class ProductCatalogFormController implements Initializable {
     }
 
 
+    private void retrievingImage() throws Exception {
+        byte[] imageBytes = productBo.searchProduct(txtId.getText()).getImage();
+        Image fxImage = new Image(new ByteArrayInputStream(imageBytes));
+        imgImage.setImage(fxImage);
+    }
 
 
 }

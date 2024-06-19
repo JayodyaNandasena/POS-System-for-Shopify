@@ -14,6 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
 
+import javax.sql.rowset.serial.SerialBlob;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.sql.Blob;
@@ -27,6 +28,8 @@ public class ProductBoImpl implements ProductBo {
 
     @Override
     public Boolean saveProduct(Product dto) throws Exception {
+        //Blob image = toBlob(dto.getImage());
+
         return productDao.add(new ModelMapper().map(dto, ProductEntity.class));
     }
 
@@ -78,8 +81,8 @@ public class ProductBoImpl implements ProductBo {
         return baos.toByteArray();
     }
 
-//    public static Blob toBlob(byte[] bytes, Connection connection) throws SQLException {
-//        return connection.createBlob().setBytes(1, bytes);
-//    }
+    public static Blob toBlob(byte[] imageByteArray) throws SQLException {
+        return new SerialBlob(imageByteArray);
+    }
 
 }

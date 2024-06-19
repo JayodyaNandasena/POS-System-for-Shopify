@@ -30,7 +30,7 @@ public class ProductDaoImpl implements ProductDao {
     public List<ProductEntity> getAll() {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Query<ProductEntity> query = session.createQuery("from ProductEntity where isActive = true", ProductEntity.class);
+        Query<ProductEntity> query = session.createQuery("from ProductEntity where isSelling = true", ProductEntity.class);
         List<ProductEntity> products = query.getResultList();
         session.getTransaction().commit();
         session.close();
