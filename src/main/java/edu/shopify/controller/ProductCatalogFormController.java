@@ -1,17 +1,18 @@
 package edu.shopify.controller;
 
 import com.jfoenix.controls.JFXButton;
+import edu.shopify.MyListener;
 import edu.shopify.bo.BoFactory;
 import edu.shopify.bo.custom.CategoryBo;
 import edu.shopify.bo.custom.ProductBo;
 import edu.shopify.bo.custom.SupplierBo;
-import edu.shopify.controller.item.PlaceOrderProductItemController;
 import edu.shopify.controller.item.ProductCatalogItemController;
 import edu.shopify.db.StageManager;
 import edu.shopify.dto.Category;
 import edu.shopify.dto.Product;
 import edu.shopify.dto.Supplier;
 import edu.shopify.util.BoType;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,6 +57,7 @@ public class ProductCatalogFormController implements Initializable {
     private SupplierBo supplierBo = BoFactory.getInstance().getBo(BoType.SUPPLIER);
 
     private byte[] imageByteArray;
+    private MyListener myListener;
 
     public ProductCatalogFormController() throws Exception {
     }
@@ -100,6 +102,17 @@ public class ProductCatalogFormController implements Initializable {
                 }
         );
 
+        products = productBo.getAllProducts();
+
+        if (products.size() > 0) {
+            setChosenProduct(products.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Product product) {
+                    setChosenProduct(product);
+                }
+            };
+        }
 
     }
 
@@ -110,8 +123,8 @@ public class ProductCatalogFormController implements Initializable {
             //setChosenFruit(fruits.get(0));
 //            myListener = new MyListener() {
 //                @Override
-//                public void onClickListener(Fruit fruit) {
-//                    setChosenFruit(fruit);
+//                public void onClickListener(Fruit product) {
+//                    setChosenFruit(product);
 //                }
 //            };
         }
@@ -124,7 +137,7 @@ public class ProductCatalogFormController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ProductCatalogItemController productCatalogItemController = fxmlLoader.getController();
-                productCatalogItemController.setData(products.get(i));
+                productCatalogItemController.setData(products.get(i),myListener);
 
                 if (column == 2) {
                     column = 0;
@@ -134,7 +147,7 @@ public class ProductCatalogFormController implements Initializable {
                 gridProducts.add(anchorPane, column++, row); //(child,column,row)
                 //set grid width
                 gridProducts.setMinWidth(Region.USE_COMPUTED_SIZE);
-                gridProducts.setPrefWidth(309);
+                gridProducts.setPrefWidth(310);
                 gridProducts.setMaxWidth(Region.USE_PREF_SIZE);
 
                 //set grid height
@@ -142,13 +155,48 @@ public class ProductCatalogFormController implements Initializable {
                 gridProducts.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 gridProducts.setMaxHeight(Region.USE_PREF_SIZE);
 
-                GridPane.setMargin(anchorPane, new Insets(10));
+                GridPane.setMargin(anchorPane, new Insets(5));
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             System.out.println("caught : "+e.getMessage());
         }
+    }
+
+    public void setChosenProduct(Product product) {
+        try{
+            //Product product = productBo.searchProduct(productId);
+
+            System.out.println(product.getId());
+            System.out.println(product.getName());
+            System.out.println(product.getQtyInStock().toString());
+            System.out.println(product.getRetailPrice().toString());
+            System.out.println(product.getCategory().getId() + " - " + product.getCategory().getName());
+            System.out.println(product.getSupplier().getSupplierId() + " - " + product.getSupplier().getName() + " - " + product.getSupplier().getCompany());
+
+            txtId.setText(product.getId());
+            txtName.setText(product.getName());
+//            txtQty.setText(product.getQtyInStock().toString());
+//            txtRetailPrice.setText(product.getRetailPrice().toString());
+//            txtWholesalePrice.setText(product.getWholesalePrice().toString());
+//
+//            String category = product.getCategory().getId() + " - " + product.getCategory().getName();
+//            String supplier = product.getSupplier().getSupplierId() + " - " + product.getSupplier().getName() + " - " + product.getSupplier().getCompany();
+//
+//            cmbCategory.setValue(category);
+//            cmbSize.setValue(product.getSize());
+//            cmbSupplier.setValue(supplier);
+//
+//            imgImage.setImage(retrievingImage(product.getImage()));
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.show();
+        }
+
+
+//        chosenFruitCard.setStyle("-fx-background-color: #" + product.getColor() + ";\n" +
+//                "    -fx-background-radius: 30;");
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) throws Exception {
@@ -334,10 +382,8 @@ public class ProductCatalogFormController implements Initializable {
     }
 
 
-    private void retrievingImage() throws Exception {
-        byte[] imageBytes = productBo.searchProduct(txtId.getText()).getImage();
-        Image fxImage = new Image(new ByteArrayInputStream(imageBytes));
-        imgImage.setImage(fxImage);
+    private Image retrievingImage(byte[] imageBytes) throws Exception {
+        return new Image(new ByteArrayInputStream(imageBytes));
     }
 
 

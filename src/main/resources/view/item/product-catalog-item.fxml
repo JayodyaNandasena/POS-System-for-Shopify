@@ -66,10 +66,10 @@
                <children>
                   <Label fx:id="lblQtyInStock" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" text="230" textAlignment="CENTER">
                      <HBox.margin>
-                        <Insets left="10.0" right="5.0" />
+                        <Insets />
                      </HBox.margin>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" text="items in Stock" textAlignment="CENTER">
+                  <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" text=" items in Stock" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

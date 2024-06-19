@@ -1,5 +1,7 @@
 package edu.shopify.controller.item;
 
+import edu.shopify.MyListener;
+import edu.shopify.controller.ProductCatalogFormController;
 import edu.shopify.dto.Product;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -7,6 +9,7 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.ByteArrayInputStream;
@@ -24,9 +27,15 @@ public class ProductCatalogItemController implements Initializable {
     public Label lblQtyInStock;
 
     private Product product;
+    private MyListener myListener;
 
-    public void setData(Product product) throws Exception {
+    private void click(MouseEvent mouseEvent) {
+        myListener.onClickListener(product);
+    }
+    public void setData(Product product, MyListener myListener) throws Exception {
         this.product = product;
+        this.myListener = myListener;
+
         lblName.setText(product.getName());
         lblProductId.setText(product.getId());
         lblRetailPrice.setText("Rs. "+product.getRetailPrice().toString());
@@ -58,4 +67,14 @@ public class ProductCatalogItemController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadButtons();
     }
+
+//    public void itemPaneOnClick(MouseEvent mouseEvent) throws Exception {
+//        ProductCatalogFormController formController = new ProductCatalogFormController();
+//
+//        //System.out.println(lblProductId.getText());
+//        //formController.setChosenProduct(lblProductId.getText());
+//        formController.setChosenProduct(product);
+//
+//
+//    }
 }
