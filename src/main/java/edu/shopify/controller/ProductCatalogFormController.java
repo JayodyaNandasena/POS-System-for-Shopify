@@ -77,13 +77,20 @@ public class ProductCatalogFormController implements Initializable {
                             stage.setScene(new Scene
                                     (new FXMLLoader(getClass()
                                             .getResource
-                                                    ("../../../../resources/view/add-category-popup.fxml"))
+                                                    ("/view/add-category-popup.fxml"))
                                             .load()));
-                            stage.show();
+                            stage.showAndWait();
+
+                            loadCategoryDropdown();
+
+                            //cmbCategory.setValue(cmbCategory.getItems().get(cmbCategory.getItems().size()-1));
+
+                            //System.out.println(cmbCategory.getItems().size()-1);
+
                         } catch (IOException e) {
-                            // Handle the exception gracefully
                             System.err.println("Error loading add-category-popup.fxml: " + e.getMessage());
-                            // You can also display an error message to the user here
+                        } catch (Exception e) {
+                            System.err.println("Error loading Category Dropdown " + e.getMessage());
                         }
                     }
                 }

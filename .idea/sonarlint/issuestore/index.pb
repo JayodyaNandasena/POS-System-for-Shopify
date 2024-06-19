@@ -91,3 +91,15 @@ m
 =src/main/java/edu/shopify/dao/custom/impl/ProductDaoImpl.java,c\c\ccba68752e527177460e8eb3b29641b6dd86028f
 t
 Dsrc/main/java/edu/shopify/controller/AddCategoryPopupController.java,7\c\7c85068b45f7a3856f515aff6507c7e5ae892f56
+d
+4src/main/java/edu/shopify/entity/CustomerEntity.java,5\b\5bf5857af1286ed5a1b5da66ff95bdbcb4165da1
+[
++src/main/java/edu/shopify/dto/Customer.java,4\2\42f636a5a055cc2b580e62d36c082364a6b9218f
+c
+3src/main/java/edu/shopify/bo/custom/CustomerBo.java,f\4\f415460f19b1437566a869cb4ed3d1cd7b822801
+l
+<src/main/java/edu/shopify/bo/custom/impl/CustomerBoImpl.java,b\9\b95b4280131350bdae4c25c6b1c28f3b7122f3a7
+e
+5src/main/java/edu/shopify/dao/custom/CustomerDao.java,a\2\a2973762e057ba26e7b13916287833d037786541
+n
+>src/main/java/edu/shopify/dao/custom/impl/CustomerDaoImpl.java,f\b\fb88cec4b4f9fb2048072d3601b5485286ee0d7b

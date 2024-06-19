@@ -1,5 +1,6 @@
 package edu.shopify.controller;
 
+import com.jfoenix.controls.JFXButton;
 import edu.shopify.bo.BoFactory;
 import edu.shopify.bo.custom.CategoryBo;
 import edu.shopify.dto.Category;
@@ -20,6 +21,7 @@ import java.util.ResourceBundle;
 public class AddCategoryPopupController implements Initializable {
     public TextField txtId;
     public TextField txtName;
+    public JFXButton btnCancel;
 
     private CategoryBo categoryBo = BoFactory.getInstance().getBo(BoType.CATEGORY);
 
@@ -27,8 +29,7 @@ public class AddCategoryPopupController implements Initializable {
     }
 
     public void btnCancelOnAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/add-category-popup.fxml")))));
+        Stage stage = (Stage) btnCancel.getScene().getWindow();
         stage.close();
 
     }
@@ -41,12 +42,14 @@ public class AddCategoryPopupController implements Initializable {
             );
 
             categoryBo.saveCategory(category);
+
+            Stage stage = (Stage) btnCancel.getScene().getWindow();
+            stage.close();
+
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
             alert.show();
         }
-
-
     }
 
     @Override
