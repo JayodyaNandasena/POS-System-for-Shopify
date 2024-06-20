@@ -1,7 +1,6 @@
 package edu.shopify.controller;
 
 import com.jfoenix.controls.JFXButton;
-import edu.shopify.MyListener;
 import edu.shopify.bo.BoFactory;
 import edu.shopify.bo.custom.CategoryBo;
 import edu.shopify.bo.custom.ProductBo;
@@ -12,7 +11,6 @@ import edu.shopify.dto.Category;
 import edu.shopify.dto.Product;
 import edu.shopify.dto.Supplier;
 import edu.shopify.util.BoType;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -51,29 +49,32 @@ public class ProductCatalogFormController implements Initializable {
     public ComboBox cmbSize;
     public ScrollPane scrlProducts;
     public GridPane gridProducts;
+    public JFXButton btnSearch;
     private List<Product> products = new ArrayList<>();
     private ProductBo productBo = BoFactory.getInstance().getBo(BoType.PRODUCT);
     private CategoryBo categoryBo = BoFactory.getInstance().getBo(BoType.CATEGORY);
     private SupplierBo supplierBo = BoFactory.getInstance().getBo(BoType.SUPPLIER);
 
     private byte[] imageByteArray;
-    private MyListener myListener;
 
     public ProductCatalogFormController() throws Exception {
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        products = productBo.getAllProducts();
         loadProductCatalog();
 
         loadSizesDropdown();
+
         try {
             loadSupplierDropdown();
             loadCategoryDropdown();
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        loadSearchButton();
 
         cmbCategory.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
@@ -102,42 +103,43 @@ public class ProductCatalogFormController implements Initializable {
                 }
         );
 
-        products = productBo.getAllProducts();
+        //products = productBo.getAllProducts();
 
-        if (products.size() > 0) {
-            setChosenProduct(products.get(0));
-            myListener = new MyListener() {
-                @Override
-                public void onClickListener(Product product) {
-                    setChosenProduct(product);
-                }
-            };
-        }
+//        if (products.size() > 0) {
+//            setChosenProduct(products.get(0));
+//            myListener = new MyListener() {
+//                @Override
+//                public void onClickListener(Product product) {
+//                    setChosenProduct(product);
+//                }
+//            };
+//        }
 
     }
 
     private void loadProductCatalog() {
-        products = productBo.getAllProducts();
-
-        if (products.size() > 0) {
-            //setChosenFruit(fruits.get(0));
-//            myListener = new MyListener() {
-//                @Override
-//                public void onClickListener(Fruit product) {
-//                    setChosenFruit(product);
-//                }
-//            };
-        }
-        int column = 0;
-        int row = 1;
         try {
+            products = productBo.getAllProducts();
+
+            //if (products.size() > 0) {
+                //setChosenFruit(fruits.get(0));
+    //            myListener = new MyListener() {
+    //                @Override
+    //                public void onClickListener(Fruit product) {
+    //                    setChosenFruit(product);
+    //                }
+    //            };
+            //}
+            int column = 0;
+            int row = 1;
+
             for (int i = 0; i < products.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/view/item/product-catalog-item.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ProductCatalogItemController productCatalogItemController = fxmlLoader.getController();
-                productCatalogItemController.setData(products.get(i),myListener);
+                productCatalogItemController.setData(products.get(i));
 
                 if (column == 2) {
                     column = 0;
@@ -155,7 +157,7 @@ public class ProductCatalogFormController implements Initializable {
                 gridProducts.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 gridProducts.setMaxHeight(Region.USE_PREF_SIZE);
 
-                GridPane.setMargin(anchorPane, new Insets(5));
+                GridPane.setMargin(anchorPane, new Insets(10));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -175,8 +177,10 @@ public class ProductCatalogFormController implements Initializable {
             System.out.println(product.getCategory().getId() + " - " + product.getCategory().getName());
             System.out.println(product.getSupplier().getSupplierId() + " - " + product.getSupplier().getName() + " - " + product.getSupplier().getCompany());
 
-            txtId.setText(product.getId());
-            txtName.setText(product.getName());
+            txtId = new TextField(product.getId());
+
+            //txtId.setText(product.getId());
+            //txtName.setText(product.getName());
 //            txtQty.setText(product.getQtyInStock().toString());
 //            txtRetailPrice.setText(product.getRetailPrice().toString());
 //            txtWholesalePrice.setText(product.getWholesalePrice().toString());
@@ -193,12 +197,41 @@ public class ProductCatalogFormController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
             alert.show();
         }
-
-
-//        chosenFruitCard.setStyle("-fx-background-color: #" + product.getColor() + ";\n" +
-//                "    -fx-background-radius: 30;");
     }
 
+    public void btnSearchOnAction(ActionEvent actionEvent){
+        try{
+            Product product = productBo.searchProduct(txtId.getText());
+
+            if (product == null){
+                new Alert(Alert.AlertType.ERROR, "Product not Found").show();
+                return;
+            }
+
+            txtId.setText(product.getId());
+            txtName.setText(product.getName());
+            txtQty.setText(product.getQtyInStock().toString());
+            txtRetailPrice.setText(product.getRetailPrice().toString());
+            txtWholesalePrice.setText(product.getWholesalePrice().toString());
+
+            String category = product.getCategory().getId() + " - " + product.getCategory().getName();
+            String supplier = product.getSupplier().getSupplierId() + " - " + product.getSupplier().getName() + " - " + product.getSupplier().getCompany();
+
+            cmbCategory.setValue(category);
+            cmbSize.setValue(product.getSize());
+            cmbSupplier.setValue(supplier);
+
+            imgImage.setImage(retrievingImage(product.getImage()));
+
+            btnAddAgain.setDisable(product.getIsSelling());
+
+            imageByteArray = product.getImage();
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Invalid product Id").show();
+        }
+
+    }
     public void btnAddOnAction(ActionEvent actionEvent) throws Exception {
         String selectedCategoryId = cmbCategory.getValue().toString().split(" - ")[0];
         Category category = categoryBo.searchCategory(selectedCategoryId);
@@ -253,9 +286,11 @@ public class ProductCatalogFormController implements Initializable {
                 true
         );
         if(Boolean.TRUE.equals(productBo.updateProduct(product))){
+
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Product Updated Successfully!");
-            alert.show();
+            alert.showAndWait();
+            loadProductCatalog();
             return;
         }
 
@@ -265,6 +300,8 @@ public class ProductCatalogFormController implements Initializable {
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws IOException {
         if(Boolean.TRUE.equals(productBo.deleteProduct(txtId.getText()))){
+            loadProductCatalog();
+            btnAddAgain.setDisable(false);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Product Deleted Successfully!");
             alert.show();
@@ -277,6 +314,7 @@ public class ProductCatalogFormController implements Initializable {
 
     public void btnAddAgainOnAction(ActionEvent actionEvent){
         if(Boolean.TRUE.equals(productBo.readdProduct(txtId.getText()))){
+            loadProductCatalog();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("Product Added Successfully!");
             alert.show();
@@ -363,6 +401,25 @@ public class ProductCatalogFormController implements Initializable {
         cmbSize.setItems(sizes);
     }
 
+    private void loadSearchButton(){
+        final double BUTTON_DIMENSION = 25;
+
+        //Create imageview with background image
+        ImageView view1 = new ImageView(new Image("/img/search-icon.jpg"));
+        view1.setFitHeight(BUTTON_DIMENSION);
+        view1.setFitWidth(BUTTON_DIMENSION);
+        view1.setPreserveRatio(false);
+
+        //Attach image to the button
+        btnSearch.setGraphic(view1);
+        //Set the image to the top
+        btnSearch.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+    }
+
+    private Image retrievingImage(byte[] imageBytes) throws Exception {
+        return new Image(new ByteArrayInputStream(imageBytes));
+    }
+
     public void navDashbordOnClick(MouseEvent mouseEvent) {
     }
 
@@ -382,9 +439,8 @@ public class ProductCatalogFormController implements Initializable {
     }
 
 
-    private Image retrievingImage(byte[] imageBytes) throws Exception {
-        return new Image(new ByteArrayInputStream(imageBytes));
-    }
+
+
 
 
 }

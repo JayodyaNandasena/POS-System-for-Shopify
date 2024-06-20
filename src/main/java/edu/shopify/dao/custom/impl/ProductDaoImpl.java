@@ -66,7 +66,7 @@ public class ProductDaoImpl implements ProductDao {
     public Boolean delete(String id) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("UPDATE ProductEntity SET isActive = false WHERE id = :id");
+        Query query = session.createQuery("UPDATE ProductEntity SET isSelling = false WHERE id = :id");
         query.setParameter("id", id);
         int rowCount = query.executeUpdate();
         session.getTransaction().commit();
@@ -78,7 +78,7 @@ public class ProductDaoImpl implements ProductDao {
     public Boolean readd(String id) {
         Session session = HibernateUtil.getSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("UPDATE ProductEntity SET isActive = true WHERE id = :id");
+        Query query = session.createQuery("UPDATE ProductEntity SET isSelling = true WHERE id = :id");
         query.setParameter("id", id);
         int rowCount = query.executeUpdate();
         session.getTransaction().commit();
