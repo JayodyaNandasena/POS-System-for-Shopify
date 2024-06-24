@@ -2,8 +2,11 @@ package edu.shopify.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,4 +24,10 @@ public class EmployeeEntity {
     private String email;
     private String password;
     private Boolean isActive;
+
+    @OneToMany(mappedBy = "employee")
+    private List<OrderEntity> orders;
+
+//    @OneToMany(mappedBy = "employee")
+//    private List<ProductEntity> managedProducts;
 }

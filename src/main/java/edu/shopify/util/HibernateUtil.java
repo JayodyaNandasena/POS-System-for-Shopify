@@ -1,9 +1,6 @@
 package edu.shopify.util;
 
-import edu.shopify.entity.CategoryEntity;
-import edu.shopify.entity.EmployeeEntity;
-import edu.shopify.entity.ProductEntity;
-import edu.shopify.entity.SupplierEntity;
+import edu.shopify.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -50,6 +47,9 @@ public class HibernateUtil {
                 .addAnnotatedClass(EmployeeEntity.class)
                 .addAnnotatedClass(CategoryEntity.class)
                 .addAnnotatedClass(ProductEntity.class)
+                .addAnnotatedClass(CustomerEntity.class)
+                .addAnnotatedClass(OrderEntity.class)
+                .addAnnotatedClass(OrderProductEntity.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

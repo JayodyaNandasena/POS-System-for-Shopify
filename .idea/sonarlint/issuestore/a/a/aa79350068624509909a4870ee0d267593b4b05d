@@ -1,0 +1,16 @@
+
+‡	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(â
+8±§ìú‚2J$e617a9fa-b81e-4c98-8354-1d29e7bc2050
+Ã
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(â
+8¿§ìú‚2J$ed6486d5-a763-4483-a543-09c3dbf7c1cf
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(“ÏÇĞÿÿÿÿÿ8Î—„û‚2J$0c3d2537-8644-48d3-a71d-5396324ff25b
+
+java:S1128"=Remove this unused import 'edu.shopify.bo.custom.EmployeeBo'.(ÏŞŒ8Ù—„û‚2J$f5d0cadd-8e38-40a5-be56-cf3dcf9edce1
+‚
+java:S1128"?Remove this unused import 'edu.shopify.dao.custom.EmployeeDao'.(ãÃº8Ù—„û‚2J$a562b36c-70cc-43dc-a187-0f1000f6e7d1
+}
+java:S1128"5Remove this unused import 'edu.shopify.dto.Employee'.(Œ•ÁËûÿÿÿÿ8Ù—„û‚2J$3b2abf0b-a6fd-427a-8628-a41e23873e08
+†
+java:S1128
+">Remove this unused import 'edu.shopify.entity.EmployeeEntity'.(šµ–şÿÿÿÿ8Ù—„û‚2J$ceab7bc7-8670-4c2a-95e1-c2918b89d08c

@@ -1,0 +1,23 @@
+
+™
+java:S1104"QMake txtId a static final constant or non-public and provide accessors if needed.(â…ô‰øÿÿÿÿ8â¸ßá‚2J$99e6fce6-7689-482d-9823-4e69a3f65363
+–
+java:S1104"SMake txtName a static final constant or non-public and provide accessors if needed.(ºßÕû8â¸ßá‚2J$afc8fc80-3352-4777-b0a8-b9f26af5cb2b
+
+java:S1104"UMake btnCancel a static final constant or non-public and provide accessors if needed.(¥˜­ûÿÿÿÿ8ƒ˜”÷‚2J$5dc766c9-d92c-404e-bd6a-9dffbbda3668
+É
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‘İŸüÿÿÿÿ8•¹ßá‚2J$19ff8218-dcea-48fd-9136-6a809d865d11
+Ä
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(û´¿İ8•¹ßá‚2J$d5121e1e-3329-4fa9-a9cd-499ca8baf58e
+´
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¹ÕÍöşÿÿÿÿ8³™”÷‚2J$4bdb9020-3321-4000-addb-62a8671fe73e
+z
+java:S1172"2Remove this unused method parameter "actionEvent".(¹ÕÍöşÿÿÿÿ8œ¹ßá‚2J$47fb023a-ec05-4bea-8cb0-b7a652900616
+z
+java:S1172%"2Remove this unused method parameter "actionEvent".(»…ä«ùÿÿÿÿ8®¹ßá‚2J$65e606e7-5759-4a85-ae95-0e7869daa521
+{
+java:S1128	"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8Ê™”÷‚2J$ed7d3236-4f08-4aa0-bf00-f3e86e00361f
+r
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²8Ì™”÷‚2J$0c20193c-0cb2-4f85-acf4-8cfaace97c96
+q
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8Î™”÷‚2J$faf9b4e9-e630-49c0-93d2-5c60682d030e

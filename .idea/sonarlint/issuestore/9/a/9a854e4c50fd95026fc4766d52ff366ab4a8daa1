@@ -1,0 +1,87 @@
+
+	java:S112£"FDefine and throw a dedicated exception instead of using a generic one.(½ËôÉúÿÿÿÿ8ğæú¦ƒ2J$1cf03d4f-cc64-4d0f-adb2-f4db60d1a552
+r
+java:S3740/"/Provide the parametrized type for this generic.(—şØ£8ñæú¦ƒ2J$06c02647-2408-41e3-9b46-1c75c7de61d4
+r
+java:S37400"/Provide the parametrized type for this generic.(­ïëå8ñæú¦ƒ2J$5c4370f6-ab81-4288-9e34-5326f7741e08
+w
+java:S37401"/Provide the parametrized type for this generic.(ÛšôÇúÿÿÿÿ8òæú¦ƒ2J$2b1c4c51-f0f9-47b6-a7e1-b7c8676277e9
+«
+java:S1488ë"bImmediately return this expression instead of assigning it to the temporary variable "imageBytes".(Áİüôüÿÿÿÿ8ôæú¦ƒ2J$2ecd3f2f-31ca-4dbc-bd7d-6d68acdf8c89
+™
+java:S1104'"QMake txtId a static final constant or non-public and provide accessors if needed.(â…ô‰øÿÿÿÿ8õæú¦ƒ2J$338eda13-8410-4513-9764-7317c5a31938
+–
+java:S1104("SMake txtName a static final constant or non-public and provide accessors if needed.(ºßÕû8õæú¦ƒ2J$1a988eb1-5ec2-4960-91fe-73e2a662af4a
+•
+java:S1104*"RMake txtQty a static final constant or non-public and provide accessors if needed.(ÅÈ8õæú¦ƒ2J$a88fb791-b5a7-4cd3-9408-880077c5f1b8
+¢
+java:S1104+"ZMake txtRetailPrice a static final constant or non-public and provide accessors if needed.(õ¥ãŠşÿÿÿÿ8õæú¦ƒ2J$4324e20d-99de-4230-9b0e-68d712f0a554
+¥
+java:S1104,"]Make txtWholesalePrice a static final constant or non-public and provide accessors if needed.(õÃœ¬øÿÿÿÿ8õæú¦ƒ2J$2d2cd1de-f17e-4f03-82af-981b00c87732
+—
+java:S1104-"TMake imgImage a static final constant or non-public and provide accessors if needed.(¡–œ8õæú¦ƒ2J$21ae5acc-a56c-453f-ab8e-28d82c9bfcb2
+š
+java:S1104."WMake btnAddAgain a static final constant or non-public and provide accessors if needed.(¬«ê·8õæú¦ƒ2J$b658c67a-2040-46d0-8ef8-ff9632adba41
+š
+java:S1104/"WMake cmbCategory a static final constant or non-public and provide accessors if needed.(—şØ£8õæú¦ƒ2J$58c9597f-6603-4257-9ec7-7a4853b4ee61
+š
+java:S11040"WMake cmbSupplier a static final constant or non-public and provide accessors if needed.(­ïëå8õæú¦ƒ2J$797e66d1-3a7b-4d0c-99f2-9d4b16453923
+›
+java:S11041"SMake cmbSize a static final constant or non-public and provide accessors if needed.(ÛšôÇúÿÿÿÿ8õæú¦ƒ2J$eeb92c16-e449-4b64-8bd6-2a36b843b243
+ 
+java:S11042"XMake scrlProducts a static final constant or non-public and provide accessors if needed.(Ï³Àçşÿÿÿÿ8õæú¦ƒ2J$ff0195ef-5b1c-4f7b-8342-cf82001dbe28
+›
+java:S11043"XMake gridProducts a static final constant or non-public and provide accessors if needed.(´ıÜé8õæú¦ƒ2J$05af2b81-2288-46f7-a2e0-aa862e7b31ad
+˜
+java:S11044"UMake btnSearch a static final constant or non-public and provide accessors if needed.(ã‹—×8öæú¦ƒ2J$a44bbc5e-1e20-46c9-9493-597e561949b2
+–
+java:S2095â"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¾¡½ßÿÿÿÿÿ8Õçú¦ƒ2J$7a260883-736b-4a94-912f-46042c7d5867
+Ä
+java:S1186§"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ù°œ[8Øçú¦ƒ2J$9979a2c5-dd20-47ed-9e6b-b470094469a0
+Å
+java:S1186ª"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®ŞÕÓ8Øçú¦ƒ2J$abd89990-7fb2-4edb-89cd-85605346d005
+Ê
+java:S1186­"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«´•›øÿÿÿÿ8Øçú¦ƒ2J$200e9fe6-9dbe-4620-917d-a93f739f8443
+Ê
+java:S1186°"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û¤Üˆûÿÿÿÿ8Øçú¦ƒ2J$f76d7854-9852-46af-9b47-48f31c15d547
+Ê
+java:S1186³"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸Ô¢Áşÿÿÿÿ8Øçú¦ƒ2J$0f42aa96-df3c-45c1-8283-05cf81ee7c62
+Ê
+java:S1186¶"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(è½›‚úÿÿÿÿ8Øçú¦ƒ2J$2b0074b3-237c-4298-8921-951ab361e63e
+Ä
+java:S1186<"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(»´É©8Øçú¦ƒ2J$4ea7ceaa-f73f-4923-9498-55e8a166aff2
+r	java:S106J"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8âçú¦ƒ2J$cf0171a8-173a-4933-9ce1-81b9c0c87024
+~	java:S125_"<This block of commented-out lines of code should be removed.(åİ‹Ì8èú¦ƒ2J$de0e1ae5-31ee-4b5c-9957-509d34b27f0e
+r	java:S106b"+Replace this use of System.err by a logger.(ÇÀÑÇşÿÿÿÿ8èú¦ƒ2J$6a5388f6-2d68-4526-b1a2-e45f4119a1a8
+m	java:S106d"+Replace this use of System.err by a logger.(¥¥·º8èú¦ƒ2J$101f9c6a-7e61-4b1f-b754-2c8e324a0fbb
+ƒ	java:S125j"<This block of commented-out lines of code should be removed.(Ó…¥½şÿÿÿÿ8èú¦ƒ2J$c7daeb1f-60a0-4c5a-924c-242c6f8773d4
+}	java:S125l"<This block of commented-out lines of code should be removed.(ÃŒá28èú¦ƒ2J$ae3cebfd-1e3e-4e1a-9c2e-c378013acb3f
+}	java:S125|"<This block of commented-out lines of code should be removed.(ÃŒá28’èú¦ƒ2J$77284b72-d6a0-4c71-a411-e32749915121
+s	java:S106¥"+Replace this use of System.out by a logger.(ŞñÎÚÿÿÿÿÿ8•èú¦ƒ2J$83103248-2d9d-4318-9423-6ae530832375
+s	java:S106­"+Replace this use of System.out by a logger.(¡ĞÉÆşÿÿÿÿ8–èú¦ƒ2J$74dbcf89-17be-4f4d-b83f-1a00b706e686
+	java:S125«"<This block of commented-out lines of code should be removed.(¢ı˜ğ8—èú¦ƒ2J$b928959a-a124-4779-ae97-f01ad1d43703
+m	java:S106®"+Replace this use of System.out by a logger.(¿áÏr8—èú¦ƒ2J$22f914d8-fa72-4c0c-b895-f0020501aa0a
+n	java:S106¯"+Replace this use of System.out by a logger.(€ÒÚ½8—èú¦ƒ2J$e4978c78-6ab3-43ff-ab66-c2d826eff6fa
+n	java:S106°"+Replace this use of System.out by a logger.(Ú¦ì¹8˜èú¦ƒ2J$50f3c0ec-2537-497e-960c-fa51ef7cc9db
+s	java:S106±"+Replace this use of System.out by a logger.(ôµÍÖùÿÿÿÿ8˜èú¦ƒ2J$2ba97ced-6b14-4604-8740-6a3cfcd2c7a6
+s	java:S106²"+Replace this use of System.out by a logger.(áË¿ëùÿÿÿÿ8˜èú¦ƒ2J$5f651f03-0bcd-40a9-a4c8-f91652450ac0
+	java:S125¶"<This block of commented-out lines of code should be removed.(Ø¨²Ñ8œèú¦ƒ2J$98918c25-77a9-4fd5-91a2-91cc2375056f
+v
+java:S1172Ê"2Remove this unused method parameter "actionEvent".(áÄ´ü8Ÿèú¦ƒ2J$6b6ffbaf-1a86-4a43-9ce3-883e7629d33c
+v
+java:S1172ë"2Remove this unused method parameter "actionEvent".(©Šªô8£èú¦ƒ2J$b4f8c0a1-1fde-422f-8d0c-06312d6e7f07
+{
+java:S1172Œ"2Remove this unused method parameter "actionEvent".(ÁÔÿÿùÿÿÿÿ8¨èú¦ƒ2J$4bfb79ce-3362-49fc-8499-6a8ce9a1045c
+°
+java:S1130­"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÒÕÙı8­èú¦ƒ2J$19cd9095-0a04-4cc2-90ba-61232c3275dd
+v
+java:S1172­"2Remove this unused method parameter "actionEvent".(ÒÕÙı8­èú¦ƒ2J$26a4de1c-78f3-4651-8f2f-44a328e8fd8b
+v
+java:S1172»"2Remove this unused method parameter "actionEvent".(ø„¹°8¯èú¦ƒ2J$4802881e-bbd6-46a2-b7a5-44e05a039e75
+z
+java:S1172Ê"1Remove this unused method parameter "mouseEvent".(ÉŠ‡“şÿÿÿÿ8²èú¦ƒ2J$93b961fe-50f8-4ef8-9302-e26cefe2f375
+	java:S125Ö"<This block of commented-out lines of code should be removed.(±ú…8¶èú¦ƒ2J$39ea2fac-f65d-487a-b74e-06ffb8fc7c5a
+µ
+java:S1130£"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(½ËôÉúÿÿÿÿ8½èú¦ƒ2J$72fb2c07-d729-4d12-bff5-184f8cb23364
+p
+java:S1144Û",Remove this unused private "getData" method.(Â‡“½8¿èú¦ƒ2J$16755cad-3157-446e-bdd6-8c2b550fc34b

@@ -1,0 +1,28 @@
+
+	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(½ËôÉúÿÿÿÿ8»Ä¥¦ƒ2J$142e5768-c1a5-48e5-8c25-0d76e2c158e1
+ 
+java:S1104"XMake lblProductId a static final constant or non-public and provide accessors if needed.(ÇÇßŒúÿÿÿÿ8¨ŠºŠƒ2J$d624414d-4388-4ef8-9b0a-f397a234f7fa
+
+java:S1104"VMake imgProduct a static final constant or non-public and provide accessors if needed.(×£³•üÿÿÿÿ8¨ŠºŠƒ2J$d0d8bbfb-9d84-4159-a9ab-6a87f98ab0f8
+›
+java:S1104"SMake lblName a static final constant or non-public and provide accessors if needed.(½Ï®·ıÿÿÿÿ8¨ŠºŠƒ2J$5129cc79-06a5-457f-b9ca-97472d028326
+Ÿ
+java:S1104"WMake productCard a static final constant or non-public and provide accessors if needed.(„÷»Ïøÿÿÿÿ8¨ŠºŠƒ2J$4bd17a2d-22c1-4d96-ae09-539324c81d93
+–
+java:S1104"SMake btnEdit a static final constant or non-public and provide accessors if needed.(¼“¸8¨ŠºŠƒ2J$64b6c784-5f5a-4b43-88c5-92d183e4a08f
+
+java:S1104"ZMake lblRetailPrice a static final constant or non-public and provide accessors if needed.(¸ü¶ñ8¨ŠºŠƒ2J$966a30ac-0df8-4407-99c4-1c69ab962f7f
+–
+java:S1104"SMake lblSize a static final constant or non-public and provide accessors if needed.(ø·œÅ8¨ŠºŠƒ2J$942e1ae1-90a4-48bc-baa7-23ce4bc80d01
+¡
+java:S1104"YMake lblQtyInStock a static final constant or non-public and provide accessors if needed.(üúçĞûÿÿÿÿ8¨ŠºŠƒ2J$60cfea54-ea0b-47d0-babe-aab5090c9499
+´
+java:S1130,"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(½ËôÉúÿÿÿÿ8õÄ¥¦ƒ2J$b83fcdf0-df9b-4237-87e9-5906f20d03f3
+
+java:S1854G">Remove this useless assignment to local variable "anchorPane".(¶Şğ8ùÜ­¦ƒ2J$547c9083-9ff4-41b7-bf9b-3f36c69eb869
+s
+java:S1172D"1Remove this unused method parameter "mouseEvent".(òñ«88úÜ­¦ƒ2J$e87cba81-f00a-406f-99c7-134e2b0b9d97
+r
+java:S1481G"/Remove this unused "anchorPane" local variable.(¶Şğ8…İ­¦ƒ2J$5d51f841-f96e-4221-9022-ee7f42f436ff
+ƒ	java:S125K"<This block of commented-out lines of code should be removed.(’Õ×—ıÿÿÿÿ8†Å¥¦ƒ2J$1e1bded2-5273-4f69-96fc-3a463679a74c
+ƒ	java:S125Q"<This block of commented-out lines of code should be removed.(Ö¡³Òıÿÿÿÿ8ˆÅ¥¦ƒ2J$6bcd564f-5797-4cef-adb0-54a6a9a9141c

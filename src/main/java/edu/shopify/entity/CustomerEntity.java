@@ -3,7 +3,10 @@ package edu.shopify.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,4 +23,7 @@ public class CustomerEntity {
     private String mobile;
     @Column(unique = true)
     private String email;
+
+//    @OneToMany(mappedBy = "customer")
+//    private List<OrderEntity> orders;
 }

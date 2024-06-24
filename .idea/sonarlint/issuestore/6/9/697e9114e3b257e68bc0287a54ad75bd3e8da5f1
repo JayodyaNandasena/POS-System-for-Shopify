@@ -1,0 +1,14 @@
+
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ð°‰½8Ã±ùª‚2J$8cd2db4c-ad1b-46d8-a594-817f5a47afde
+Ä
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ð°‰½8è±ùª‚2J$d4978ade-7a74-4c69-8334-c006c9814fa2
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(ú¡¶¦øÿÿÿÿ8ô±ùª‚2J$11aac945-05e7-4ae1-acf8-0e7942dc8b5d
+~	java:S125"<This block of commented-out lines of code should be removed.(Þ¡ñé8ý±ùª‚2J$a726c75e-7ba1-484a-8b51-2101d607d9eb
+ƒ	java:S1256"<This block of commented-out lines of code should be removed.(öã·þûÿÿÿÿ8‹²ùª‚2J$090f4468-dfe9-402d-916c-1b27884a6c4a
+ƒ	java:S125H"<This block of commented-out lines of code should be removed.(¡®ÕŒüÿÿÿÿ8²ùª‚2J$38df5f06-c458-48f6-a87c-f274857527bd
+K
+java:S1128")Remove this unused import 'javax.crypto'.(×ßº–ûÿÿÿÿ8ÝÄ¤¹‚2
+^
+java:S1128"<Remove this unused import 'javax.crypto.spec.SecretKeySpec'.(¹«è•üÿÿÿÿ8ÝÄ¤¹‚2
+J
+java:S1128"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8ÝÄ¤¹‚2

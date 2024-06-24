@@ -1,12 +1,10 @@
 package edu.shopify.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Blob;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,4 +27,11 @@ public class ProductEntity {
     private Double wholesalePrice;
     private Integer qtyInStock;
     private Boolean isSelling;
+
+//    @ManyToOne
+//    @JoinColumn(name = "employeeId")
+//    private Employee employee;
+
+//    @OneToMany(mappedBy = "product")
+//    private List<OrderProductEntity> orders;
 }

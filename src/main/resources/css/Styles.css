@@ -44,6 +44,7 @@
     -fx-border-color: #FE724C;
     -fx-border-radius: 5px;
 }
+
 .item-border{
     -fx-background-color: #F3F3F3;
     -fx-border-color: #000000;
@@ -60,6 +61,22 @@
     -fx-background-color: #0147d4;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+}
+
+.btn-solid-orange{
+    -fx-background-color: #FE724C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #FE724C;
+    -fx-border-radius: 15px;
+}
+
+.btn-border-orange{
+    -fx-background-color: white;
+    -fx-text-fill: #FE724C;
+    -fx-font-weight: bold;
+    -fx-border-color: #FE724C;
+    -fx-border-radius: 15px;
 }
 
 .textPane{
