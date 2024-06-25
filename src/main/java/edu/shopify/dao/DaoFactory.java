@@ -1,9 +1,6 @@
 package edu.shopify.dao;
 
-import edu.shopify.dao.custom.impl.CategoryDaoImpl;
-import edu.shopify.dao.custom.impl.EmployeeDaoImpl;
-import edu.shopify.dao.custom.impl.ProductDaoImpl;
-import edu.shopify.dao.custom.impl.SupplierDaoImpl;
+import edu.shopify.dao.custom.impl.*;
 import edu.shopify.util.DaoType;
 
 public class DaoFactory {
@@ -20,6 +17,9 @@ public class DaoFactory {
             case SUPPLIER: return (T) new SupplierDaoImpl();
             case CATEGORY: return (T) new CategoryDaoImpl();
             case PRODUCT: return (T) new ProductDaoImpl();
+            case CUSTOMER: return (T) new CustomerDaoImpl();
+            case ORDER: return (T) new OrderDaoImpl();
+            case ORDERPRODUCT: return (T) new OrderProductDaoImpl();
         }
         return null;
     }

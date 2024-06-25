@@ -1,7 +1,7 @@
 
-H
-java:S1168""+Return an empty collection instead of null.(¥¹ï8…ÃÜ÷‚2
-a
-java:S1128"?Remove this unused import 'edu.shopify.dao.custom.CategoryDao'.(ÕÀÔñþÿÿÿÿ8ŽÃÜ÷‚2
-`
-java:S1128">Remove this unused import 'edu.shopify.entity.CategoryEntity'.(æ¦ë²ýÿÿÿÿ8ŽÃÜ÷‚2
+n
+java:S1168""+Return an empty collection instead of null.(¥¹ï8…ÃÜ÷‚2J$f61515a2-9bd3-49c2-9e02-97e7524bb02a
+‡
+java:S1128"?Remove this unused import 'edu.shopify.dao.custom.CategoryDao'.(ÕÀÔñþÿÿÿÿ8Í’Æø„2J$6881dde4-2a96-48f4-a8ff-6d88cf1325e0
+†
+java:S1128">Remove this unused import 'edu.shopify.entity.CategoryEntity'.(æ¦ë²ýÿÿÿÿ8Í’Æø„2J$053fb754-10b9-47b3-8c31-9a19017b480b

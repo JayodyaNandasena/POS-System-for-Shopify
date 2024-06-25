@@ -1,59 +1,73 @@
 
 w
-java:S3740"/Provide the parametrized type for this generic.(†Æœåÿÿÿÿÿ8é©ü×„2J$1012929b-576e-4fbc-bba6-735650c7397b
-w
-java:S3740"/Provide the parametrized type for this generic.(»–ø‚ıÿÿÿÿ8Ë•ÿ×„2J$28102fc6-dbf8-41cb-9cd2-528ec46fbb32
+java:S3740""/Provide the parametrized type for this generic.(†Æœåÿÿÿÿÿ8‡ÕŒø„2J$b184f029-fcf5-4e06-a444-2cf3453ceb52
+r
+java:S3740."/Provide the parametrized type for this generic.(ÍçÅ’8‡ÕŒø„2J$3a33d51c-450d-45e0-920c-09c67b4b7af6
 
-java:S1104"VMake lblOrderId a static final constant or non-public and provide accessors if needed.(¢–ñ¯ıÿÿÿÿ8ìú×„2J$0498e61a-6b68-40d8-8f0c-6a9724e48060
+java:S1104"VMake lblOrderId a static final constant or non-public and provide accessors if needed.(¢–ñ¯ıÿÿÿÿ8ˆÕŒø„2J$f6075810-b0a6-40a8-b6e0-2e7c5f14bb05
  
-java:S1104"XMake scrlProducts a static final constant or non-public and provide accessors if needed.(Ï³Àçşÿÿÿÿ8×û×„2J$f81f8a0c-928e-44a1-ade4-664901ea12b9
+java:S1104 "XMake scrlProducts a static final constant or non-public and provide accessors if needed.(Ï³Àçşÿÿÿÿ8ˆÕŒø„2J$63e12ab6-447d-467e-8ab0-3363c28f493f
 ›
-java:S1104"XMake gridProducts a static final constant or non-public and provide accessors if needed.(´ıÜé8²‹ü×„2J$9727d2ce-5a75-4ce1-8605-7aee0e9807cd
+java:S1104!"XMake gridProducts a static final constant or non-public and provide accessors if needed.(´ıÜé8ˆÕŒø„2J$a6a69a7e-d2cf-4a8e-b4e5-ed552b95058e
 
-java:S1104"VMake cmbItemIds a static final constant or non-public and provide accessors if needed.(†Æœåÿÿÿÿÿ8ë©ü×„2J$39270a30-4885-4be4-94e2-ea87f799a01d
+java:S1104""VMake cmbItemIds a static final constant or non-public and provide accessors if needed.(†Æœåÿÿÿÿÿ8‰ÕŒø„2J$8a45fd47-7e39-414e-a4e8-cd552326b759
 —
-java:S1104"TMake imgImage a static final constant or non-public and provide accessors if needed.(¡–œ8‰ßü×„2J$d62d0d64-b59b-4486-b9af-002f87b1c929
+java:S1104#"TMake imgImage a static final constant or non-public and provide accessors if needed.(¡–œ8‰ÕŒø„2J$8f6e4662-60a9-46cd-9700-8cf451ceb1b3
 ›
-java:S1104"SMake lblName a static final constant or non-public and provide accessors if needed.(½Ï®·ıÿÿÿÿ8ã­ı×„2J$52ed1d30-0527-4cc4-86b2-88aac6c8c2e1
+java:S1104$"SMake lblName a static final constant or non-public and provide accessors if needed.(½Ï®·ıÿÿÿÿ8‰ÕŒø„2J$cfe8cb56-768e-4134-84fb-87fd6e4eaf0a
 –
-java:S1104"SMake lblSize a static final constant or non-public and provide accessors if needed.(ø·œÅ8ã­ı×„2J$4bc4a8ad-9099-4a0f-be18-52568527cf5a
+java:S1104%"SMake lblSize a static final constant or non-public and provide accessors if needed.(ø·œÅ8‰ÕŒø„2J$2b9eaaaf-acd3-4971-b31f-d3587c83f16b
 Ÿ
-java:S1104"WMake lblCategory a static final constant or non-public and provide accessors if needed.(´÷§Ìûÿÿÿÿ8ËÕı×„2J$f9523ea0-9af7-4dcd-a30a-9cab8372187d
+java:S1104&"WMake lblCategory a static final constant or non-public and provide accessors if needed.(´÷§Ìûÿÿÿÿ8‰ÕŒø„2J$b5459b92-9f17-47dc-bf31-8a420b667d32
 š
-java:S1104"XMake lblUnitPrice a static final constant or non-public and provide accessors if needed.(°„«8ËÕı×„2J$4be73333-e339-4cb3-8be3-4e99945f4486
+java:S1104'"XMake lblUnitPrice a static final constant or non-public and provide accessors if needed.(°„«8‰ÕŒø„2J$d8e12e1d-ba72-445e-bd16-79425ea40237
 ¡
-java:S1104"YMake lblQtyInStock a static final constant or non-public and provide accessors if needed.(üúçĞûÿÿÿÿ8”ìı×„2J$4ab85524-4827-4f61-88a8-35966a692ebd
+java:S1104("YMake lblQtyInStock a static final constant or non-public and provide accessors if needed.(üúçĞûÿÿÿÿ8‰ÕŒø„2J$a2ef06be-abd2-43a4-b45d-fe1b8b12a075
 •
-java:S1104"RMake txtQty a static final constant or non-public and provide accessors if needed.(ÅÈ8‡¾ş×„2J$2779e8a3-af2e-4195-be1a-99d6c9041169
-£
-java:S1104"[Make cmbCustomerName a static final constant or non-public and provide accessors if needed.(»–ø‚ıÿÿÿÿ8Í•ÿ×„2J$488d4f2b-86c0-47fe-9a5d-6c1f22d45f66
-œ
-java:S1104"TMake txtEmail a static final constant or non-public and provide accessors if needed.(„Å«ıÿÿÿÿ8§øØ„2J$be3fb8b9-deff-4eda-b966-ea90a0dfd74b
-—
-java:S1104"UMake txtMobile a static final constant or non-public and provide accessors if needed.(ä°ğl8ä™‚Ø„2J$68f1c594-632a-4f6a-8d43-b9997c560ece
+java:S1104)"RMake txtQty a static final constant or non-public and provide accessors if needed.(ÅÈ8‰ÕŒø„2J$42b7e745-1040-455a-b594-0f52ba220575
 ¥
-java:S1104"]Make scrlOrderProducts a static final constant or non-public and provide accessors if needed.(ˆŞÁ¹ÿÿÿÿÿ8ëç‚Ø„2J$adab7fa9-9fd0-48a5-9f37-2a0a90e35fbc
+java:S1104*"]Make scrlOrderProducts a static final constant or non-public and provide accessors if needed.(ˆŞÁ¹ÿÿÿÿÿ8‰ÕŒø„2J$0c90747d-f264-4962-b1b6-eddc00d01d7d
 œ
-java:S1104"TMake gridCart a static final constant or non-public and provide accessors if needed.(½ŞÆ¼şÿÿÿÿ8ëç‚Ø„2J$d90ab38b-049b-4b57-b03b-097661b42063
+java:S1104+"TMake gridCart a static final constant or non-public and provide accessors if needed.(½ŞÆ¼şÿÿÿÿ8‰ÕŒø„2J$e0f63e36-8817-43f6-a996-3ff79a028651
 —
-java:S1104"TMake lblTotal a static final constant or non-public and provide accessors if needed.(ÿêìˆ8ä¦ƒØ„2J$6f312e4e-27ff-4705-b8ba-76492e346705
+java:S1104,"TMake lblTotal a static final constant or non-public and provide accessors if needed.(ÿêìˆ8‰ÕŒø„2J$1326dfd1-ee85-4b87-bf7f-7ae8f938f2db
+–
+java:S1104-"SMake txtName a static final constant or non-public and provide accessors if needed.(ºßÕû8‰ÕŒø„2J$222df195-676b-42c3-a64b-2deb92008653
+˜
+java:S1104."UMake cmbMobile a static final constant or non-public and provide accessors if needed.(ÍçÅ’8‰ÕŒø„2J$5e7e38c1-598f-4dc1-a1a2-bf581e901edb
+œ
+java:S1104/"TMake txtEmail a static final constant or non-public and provide accessors if needed.(„Å«ıÿÿÿÿ8èˆ“ø„2J$6f16f087-7ba4-4241-bd10-4a78ae11b765
 É
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Š²Ô¢úÿÿÿÿ8§âş×„2J$490326ef-a28c-461a-9157-58959708e98f
+java:S1186u"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Š²Ô¢úÿÿÿÿ8™ÕŒø„2J$e593f282-600a-45d3-9438-cce030834ce6
 Ä
-java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•Ğ€½8·ÆƒØ„2J$f2669545-7b41-4eb1-88f1-d3bad5493de6
+java:S1186x"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•Ğ€½8™ÕŒø„2J$fed415a6-fa62-4c08-af71-5228a0bead25
 Ä
-java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒìÛ‡8ĞÛƒØ„2J$5e00f824-86b5-4aff-b5eb-190c8805dde2
+java:S1186{"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒìÛ‡8™ÕŒø„2J$268f93cf-b325-4c52-acb2-9f19188efa6e
 É
-java:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÉŠ‡“şÿÿÿÿ8“ş„Ø„2J$f5076635-bc03-4b67-8037-88b0ee4aa85e
-É
-java:S1186+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(è½›‚úÿÿÿÿ8ùû…Ø„2J$431be107-1cea-4ce8-8671-454cb57123c4
-É
-java:S1186."€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸Ô¢Áşÿÿÿÿ8ùû…Ø„2J$5b5a05c8-1d97-4c2a-ab1e-da8c2b5991ae
-É
-java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û¤Üˆûÿÿÿÿ8¬–†Ø„2J$f4c20ead-3ae1-4345-98d0-d51ea94676c1
+java:S1186~"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÉŠ‡“şÿÿÿÿ8™ÕŒø„2J$5cb17115-5931-44a1-94c5-608363aa06f4
+Ê
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(è½›‚úÿÿÿÿ8šÕŒø„2J$5cb62be6-83c3-427e-a11d-a3be7494cf8b
+Ê
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸Ô¢Áşÿÿÿÿ8šÕŒø„2J$1dc50e78-ceb5-4149-be16-ae9860d4703c
+Ê
+java:S1186‡"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û¤Üˆûÿÿÿÿ8šÕŒø„2J$afa087ac-9b22-4753-834d-de4df7f004d8
+Å
+java:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®ŞÕÓ8šÕŒø„2J$178c65a0-0ed7-4317-a9c7-2fd3eb54f0b1
+Ê
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«´•›øÿÿÿÿ8šÕŒø„2J$8fc4650e-09f9-496f-b6e2-848041c46ae2
 Ä
-java:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®ŞÕÓ8å±†Ø„2J$ed54db9e-d174-4516-879f-f38059670a16
-É
-java:S11867"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«´•›øÿÿÿÿ8ÀÊ†Ø„2J$df334ae1-0cd7-48b7-bfc6-51b629f68fdd
-
-java:S1186:"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ù°œ[8÷ò†Ø„2
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ù°œ[8šÕŒø„2J$df0012b8-464a-4dee-9ae8-4111b1977fdb
+Ä
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(´ßÈ„8šÕŒø„2J$204c8483-7f08-48a1-be26-1d7a0bba4efb
+š
+java:S14500"WRemove the "products" field and declare it as a local variable in the relevant methods.(íĞûä8›ÕŒø„2J$8184d2f6-0406-4ddc-8432-8de75079285c
+ƒ	java:S1252"<This block of commented-out lines of code should be removed.(œæ°šøÿÿÿÿ8ÕŒø„2J$daaf53b2-92da-4067-8035-524240c13cfb
+ƒ	java:S125<"<This block of commented-out lines of code should be removed.(ºìÔêøÿÿÿÿ8 ÕŒø„2J$4196d54a-9cce-419f-99a8-97442fdec2cf
+m	java:S106R"+Replace this use of System.err by a logger.( İ‰8¨ÕŒø„2J$d16a1296-e37e-42ee-8f86-acba57883b4a
+l	java:S106T"+Replace this use of System.err by a logger.(Ç„œ}8¨ÕŒø„2J$3af21419-1182-4402-9759-ccee2cbcef30
+}
+java:S1128":Remove this unused import 'edu.shopify.bo.custom.OrderBo'.(ß­—«8³áÖø„2J$c774b78f-c066-46f4-be80-b254dab30dac
+}
+java:S1128"5Remove this unused import 'edu.shopify.dto.Category'.(úıÛşÿÿÿÿ8³áÖø„2J$55a24d39-1dbf-4eff-9046-eae9c3c94a83
+o
+java:S10680",Remove this unused "products" private field.(íĞûä8®ÕŒø„2J$c8d1ad82-6467-4451-b860-8d08d18b1d0a

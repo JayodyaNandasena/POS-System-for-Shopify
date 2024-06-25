@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="185.0" prefWidth="450.0" styleClass="item-border" stylesheets="@../css/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.AddCustomerPopupFormController">
+   <children>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Add New Customer">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.66668701171875" minWidth="10.0" prefWidth="117.77777099609375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.22222900390625" minWidth="10.0" prefWidth="322.22222900390625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Customer Name" />
+                  <Label text="Mobile Number" GridPane.rowIndex="1" />
+                  <Label text="Email Address" GridPane.rowIndex="2" />
+                  <HBox alignment="CENTER_LEFT" prefWidth="99.0" GridPane.columnIndex="1">
+                     <children>
+                        <TextField fx:id="txtFirstName" prefHeight="25.0" prefWidth="153.0" promptText="First Name">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtLastName" prefHeight="25.0" prefWidth="155.0" promptText="Last Name">
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="txtMobile" promptText="Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtEmail" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <JFXButton fx:id="btnCancelCustomer" onAction="#btnCancelOnAction" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#btnAddCustomerOnAction" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #0066FF;" text="Add Customer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

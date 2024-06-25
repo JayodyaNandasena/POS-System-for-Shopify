@@ -41,5 +41,19 @@ public class CustomerBoImpl implements CustomerBo {
         return null;
     }
 
+    @Override
+    public String getLastId() throws Exception {
+        return customerDao.getLastId();
+    }
+
+    @Override
+    public String[] getAllMobiles() {
+        String[] mobiles = customerDao.getMobiles();
+
+        if (mobiles.length == 0){
+            return new String[0];
+        }
+        return mobiles;
+    }
 
 }

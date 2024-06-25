@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.AddOrderFormController">
    <children>
       <HBox layoutX="169.0" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -258,17 +257,17 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Label>
-                        <ComboBox fx:id="cmbCustomerName" maxWidth="350.0" prefWidth="192.0" style="-fx-background-radius: 15;">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </ComboBox>
-                        <TextField fx:id="txtEmail" disable="true" style="-fx-background-radius: 15;">
+                        <TextField fx:id="txtName" disable="true" promptText="Customer Name" style="-fx-background-radius: 15;">
                            <VBox.margin>
                               <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="txtMobile" disable="true" style="-fx-background-radius: 15;">
+                        <ComboBox fx:id="cmbMobile" maxWidth="350.0" prefWidth="192.0" promptText="-- select Customer Mobile--" style="-fx-background-radius: 15;">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="txtEmail" disable="true" promptText="Email Address" style="-fx-background-radius: 15;">
                            <VBox.margin>
                               <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
                            </VBox.margin>

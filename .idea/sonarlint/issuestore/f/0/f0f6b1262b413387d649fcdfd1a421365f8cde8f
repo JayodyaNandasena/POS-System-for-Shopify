@@ -1,3 +1,10 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(„·Î€ÿÿÿÿÿ8¼ÍÔ„2
+•
+java:S1104"SMake imgItem a static final constant or non-public and provide accessors if needed.(áÎ-8ş÷âó„2J$a31a939b-aa54-4291-aecb-37972952ccfd
+›
+java:S1104"SMake lblName a static final constant or non-public and provide accessors if needed.(½Ï®·ıÿÿÿÿ8õíãó„2J$b6b37f2c-8e98-4f8d-94bf-0ca8510bba3f
+q
+java:S1104	"TMake lblPrice a static final constant or non-public and provide accessors if needed.(×±­Ó8ÇËäó„2
+t
+java:S1104
+"RMake lblQty a static final constant or non-public and provide accessors if needed.(²´ºëúÿÿÿÿ8ÇËäó„2

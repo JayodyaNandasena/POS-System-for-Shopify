@@ -88,4 +88,44 @@ public class CustomerDaoImpl implements CustomerDao {
             session.close();
         }
     }
+
+
+    @Override
+    public String getLastId() {
+        Session session = HibernateUtil.getSession();
+        session.getTransaction().begin();
+        try {
+            String hql = "SELECT id FROM CustomerEntity ORDER BY id DESC LIMIT 1";
+            Query<String> query = session.createQuery(hql, String.class);
+            query.setMaxResults(1);
+            String lastCustomerId = query.uniqueResult();
+            session.getTransaction().commit();
+            return lastCustomerId;
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public String[] getMobiles() {
+        Session session = HibernateUtil.getSession();
+        session.getTransaction().begin();
+        try {
+            String hql = "SELECT mobile FROM CustomerEntity";
+            Query<String> query = session.createQuery(hql, String.class);
+            List<String> mobileList = query.list();
+            session.getTransaction().commit();
+            return mobileList.toArray(new String[0]);
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            return new String[0];
+        } finally {
+            session.close();
+        }
+    }
+
+
 }

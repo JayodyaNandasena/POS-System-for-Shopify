@@ -19,6 +19,8 @@ public class BoFactory {
             case CATEGORY: return (T) new CategoryBoImpl();
             case PRODUCT: return (T) new ProductBoImpl();
             case CUSTOMER: return (T)new CustomerBoImpl();
+            case ORDER: return (T)new OrderBoImpl();
+            case ORDERPRODUCT: return (T)new OrderProductBoImpl();
         }
         return null;
     }
