@@ -135,3 +135,5 @@ p
 0src/main/java/edu/shopify/bo/custom/OrderBo.java,c\c\cc22cea3f03385105117a9f8f07a0225e58c3884
 g
 7src/main/java/edu/shopify/bo/custom/OrderProductBo.java,1\3\13d61897bd02ba33026b990e7666e84f33d53e65
+\
+,src/main/java/edu/shopify/dto/tm/CartTm.java,e\d\edf269a3b9d46dc6ee2a8965ae1719b90174e060

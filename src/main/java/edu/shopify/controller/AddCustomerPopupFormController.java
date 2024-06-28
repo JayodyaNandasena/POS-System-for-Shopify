@@ -3,7 +3,6 @@ package edu.shopify.controller;
 import com.jfoenix.controls.JFXButton;
 import edu.shopify.bo.BoFactory;
 import edu.shopify.bo.custom.CustomerBo;
-import edu.shopify.dto.Category;
 import edu.shopify.dto.Customer;
 import edu.shopify.util.BoType;
 import javafx.event.ActionEvent;
@@ -83,6 +82,5 @@ public class AddCustomerPopupFormController implements Initializable {
         Stage stage = (Stage) btnCancelCustomer.getScene().getWindow();
         stage.close();
     }
-
 
 }

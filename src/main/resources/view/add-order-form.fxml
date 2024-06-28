@@ -4,24 +4,24 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.AddOrderFormController">
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.shopify.controller.AddOrderFormController">
    <children>
       <HBox layoutX="169.0" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../css/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox maxWidth="300.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="124.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+            <VBox maxWidth="120.0" minWidth="-Infinity" prefHeight="500.0" prefWidth="100.0" spacing="5.0" style="-fx-border-color: #f5f5f5;" styleClass="background" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
                <children>
-                  <VBox alignment="TOP_CENTER" prefWidth="100.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="201.0">
                      <children>
                         <ImageView fitHeight="32.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                            <image>
@@ -101,258 +101,344 @@
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox prefHeight="500.0" prefWidth="564.0" styleClass="transparent" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" top="5.0" />
-               </padding>
+            <VBox maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="729.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefWidth="200.0">
                      <children>
-                        <Label text="Order Id : ">
-                           <font>
-                              <Font name="Calibri Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblOrderId" text="OR0001">
-                           <font>
-                              <Font name="Calibri Bold" size="19.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <Label style="-fx-background-color: #DCF2D9; -fx-background-radius: 8;" text="In Progress" textFill="#29b651">
-                     <font>
-                        <Font name="Calibri Bold" size="13.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="1.0" left="5.0" right="5.0" top="1.0" />
-                     </padding>
-                  </Label>
-                  <ScrollPane fx:id="scrlProducts" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="164.0" prefWidth="309.0" styleClass="transparent" stylesheets="@../css/Styles.css" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets right="5.0" />
-                     </VBox.margin>
-                     <content>
-                        <GridPane fx:id="gridProducts" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" styleClass="transparent" stylesheets="@../css/Styles.css">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
-                  <VBox alignment="TOP_CENTER" prefWidth="100.0">
-                     <children>
-                        <HBox alignment="TOP_CENTER" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="400.0">
                            <children>
-                              <Label text="Select Item Id :">
+                              <Label text="Order Id : ">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
                                  <HBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    <Insets left="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <ComboBox fx:id="cmbItemIds" maxWidth="350.0" prefWidth="192.0" style="-fx-background-radius: 15;">
-                                 <HBox.margin>
-                                    <Insets left="5.0" right="5.0" />
-                                 </HBox.margin>
-                              </ComboBox>
+                              <Label fx:id="lblOrderId" text="OR0001">
+                                 <font>
+                                    <Font name="Calibri Bold" size="19.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="400.0">
                            <children>
-                              <ImageView fx:id="imgImage" fitHeight="150.0" fitWidth="191.0" onMouseClicked="#imgImageClickOnAction" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/gallery.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox>
+                              <Label fx:id="lblDate" prefHeight="17.0" text="2024-06-25">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="lblTime" prefHeight="17.0" text="12:00 AM">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="455.0" prefWidth="729.0">
+                     <children>
+                        <VBox prefHeight="455.0" prefWidth="336.0" styleClass="transparent" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <VBox prefHeight="124.0" prefWidth="318.0">
                                  <children>
-                                    <Label fx:id="lblName" alignment="TOP_LEFT" prefHeight="59.0" prefWidth="162.0" text="Name">
+                                    <Label text="Customer Information">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
                                        <VBox.margin>
-                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                          <Insets left="5.0" right="5.0" top="5.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Label fx:id="lblSize" prefHeight="17.0" prefWidth="162.0" text="Size">
+                                    <TextField fx:id="txtName" promptText="Customer Name" style="-fx-background-radius: 15;">
                                        <VBox.margin>
-                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                          <Insets bottom="2.0" left="5.0" right="5.0" top="10.0" />
                                        </VBox.margin>
-                                    </Label>
-                                    <Label fx:id="lblCategory" prefWidth="162.0" text="Category">
-                                       <padding>
-                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
-                                       </padding>
-                                    </Label>
-                                    <Label fx:id="lblUnitPrice" prefWidth="162.0" text="Unit Price">
-                                       <padding>
-                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
-                                       </padding>
+                                    </TextField>
+                                    <ComboBox fx:id="cmbMobile" prefHeight="25.0" prefWidth="365.0" promptText="-- select Customer Mobile--" style="-fx-background-radius: 15;">
+                                       <VBox.margin>
+                                          <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <TextField fx:id="txtEmail" promptText="Email Address" style="-fx-background-radius: 15;">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Separator prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="100.0">
+                                 <children>
+                                    <Label text="Add Items to Cart">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
                                     </Label>
                                     <HBox prefWidth="200.0">
                                        <children>
-                                          <Label fx:id="lblQtyInStock" text="999">
-                                             <padding>
-                                                <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
-                                             </padding>
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
+                                          <Label text="Select Item Id :">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
                                           </Label>
-                                          <Label text=" Items in Stock">
-                                             <padding>
-                                                <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
-                                             </padding>
+                                          <ComboBox fx:id="cmbItemIds" maxWidth="350.0" prefHeight="25.0" prefWidth="215.0" promptText="-- select Item id --" style="-fx-background-radius: 15;">
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="imgImage" fitHeight="150.0" fitWidth="135.0" pickOnBounds="true" HBox.hgrow="NEVER">
+                                             <image>
+                                                <Image url="@../img/gallery.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <Label fx:id="lblName" alignment="TOP_LEFT" prefHeight="59.0" prefWidth="162.0" text="Name" textAlignment="JUSTIFY" wrapText="true">
+                                                   <VBox.margin>
+                                                      <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                                   <children>
+                                                      <Label prefHeight="19.0" prefWidth="82.0" text="Size : ">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="lblSize" prefHeight="17.0" prefWidth="162.0" text="Size">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                                   <children>
+                                                      <Label prefHeight="19.0" prefWidth="138.0" text="Category : ">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="lblCategory" prefWidth="162.0" text="Category">
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                                   <children>
+                                                      <Label prefHeight="19.0" prefWidth="106.0" text="Unit Price : ">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="17.0" prefWidth="60.0" text="Rs. " />
+                                                      <Label fx:id="lblUnitPrice" prefHeight="24.0" prefWidth="124.0" text="Unit Price">
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                                   <children>
+                                                      <Label fx:id="lblQtyInStock" text="999">
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text=" Items in Stock">
+                                                         <padding>
+                                                            <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                                         </padding>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefWidth="200.0">
+                                       <children>
+                                          <Label text="Enter Quantity:">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtQty" prefHeight="25.0" prefWidth="216.0" style="-fx-background-radius: 15;">
+                                             <HBox.margin>
+                                                <Insets bottom="7.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_RIGHT" prefWidth="471.0">
+                                 <children>
+                                    <JFXButton onAction="#btnAddToCartOnAction" prefHeight="27.0" prefWidth="124.0" style="-fx-background-radius: 15;" styleClass="btn-solid-orange" stylesheets="@../css/Styles.css" text="Add To Cart" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets right="15.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="381.0" prefWidth="417.0" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox prefWidth="100.0">
+                                 <children>
+                                    <Label text="Order Details">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="tblCart" prefHeight="378.0" prefWidth="391.0">
+                                <columns>
+                                  <TableColumn fx:id="colProductId" prefWidth="66.22216880321503" text="Product Id" />
+                                  <TableColumn fx:id="colProductName" prefWidth="83.99999237060547" text="Name" />
+                                    <TableColumn fx:id="colQty" prefWidth="75.0" text="Quantity" />
+                                    <TableColumn fx:id="colUnitPrice" prefWidth="88.88885498046875" text="Unit Price" />
+                                    <TableColumn fx:id="colAmount" prefWidth="75.55558268229169" text="Amount" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <HBox prefWidth="200.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 15;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Total Amount">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblTotal" text="Rs. 99999.99" textAlignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                             </HBox.margin>
                                           </Label>
                                        </children>
                                     </HBox>
                                  </children>
-                              </VBox>
-                           </children>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox alignment="TOP_CENTER" prefWidth="200.0">
-                           <children>
-                              <Label text="Enter Quantity">
-                                 <HBox.margin>
+                                 <padding>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <TextField fx:id="txtQty" prefHeight="25.0" prefWidth="192.0" style="-fx-background-radius: 15;">
-                                 <HBox.margin>
-                                    <Insets bottom="7.0" left="5.0" right="5.0" />
-                                 </HBox.margin>
-                              </TextField>
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="471.0">
+                                 <children>
+                                    <JFXButton onAction="#btnClearAllOnAction" prefHeight="25.0" prefWidth="108.0" styleClass="btn-border-orange" stylesheets="@../css/Styles.css" text="Clear All" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton buttonType="RAISED" onAction="#btnConfirmOrderOnAction" prefHeight="27.0" prefWidth="145.0" style="-fx-background-radius: 15;" styleClass="btn-solid-orange" stylesheets="@../css/Styles.css" text="Confirm Order" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
                            </children>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="471.0">
-                     <children>
-                        <JFXButton onAction="#btnAddToCartOnAction" prefHeight="27.0" prefWidth="124.0" style="-fx-background-radius: 15;" styleClass="btn-solid-orange" stylesheets="@../css/Styles.css" text="Add To Cart" textFill="WHITE">
                            <HBox.margin>
-                              <Insets right="15.0" />
+                              <Insets />
                            </HBox.margin>
-                        </JFXButton>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="502.0" style="-fx-background-color: #ffffff;" stylesheets="@../css/Styles.css" HBox.hgrow="ALWAYS">
-               <children>
-                  <VBox prefWidth="100.0">
-                     <children>
-                        <Label text="Customer Information">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <TextField fx:id="txtName" disable="true" promptText="Customer Name" style="-fx-background-radius: 15;">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <ComboBox fx:id="cmbMobile" maxWidth="350.0" prefWidth="192.0" promptText="-- select Customer Mobile--" style="-fx-background-radius: 15;">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </ComboBox>
-                        <TextField fx:id="txtEmail" disable="true" promptText="Email Address" style="-fx-background-radius: 15;">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </TextField>
-                     </children>
-                  </VBox>
-                  <VBox prefWidth="100.0">
-                     <children>
-                        <Label text="Order Details">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <ScrollPane fx:id="scrlOrderProducts" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="238.0" prefWidth="242.0" styleClass="transparent" stylesheets="@../css/Styles.css">
-                           <content>
-                              <GridPane fx:id="gridCart" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" styleClass="transparent" stylesheets="@../css/Styles.css">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                              </GridPane>
-                           </content>
                            <padding>
-                              <Insets bottom="5.0" left="1.0" right="1.0" top="5.0" />
+                              <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
                            </padding>
-                        </ScrollPane>
-                     </children>
-                  </VBox>
-                  <HBox prefWidth="200.0" style="-fx-background-color: #F3F3F3; -fx-background-radius: 15;">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" prefWidth="200.0">
-                           <children>
-                              <Label text="Total Amount">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
-                           <children>
-                              <Label fx:id="lblTotal" text="Rs. 99999.99" textAlignment="RIGHT">
-                                 <font>
-                                    <Font name="System Bold" size="15.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="471.0">
-                     <children>
-                        <JFXButton onAction="#btnClearAllOnAction" prefHeight="25.0" prefWidth="108.0" styleClass="btn-border-orange" stylesheets="@../css/Styles.css" text="Clear All" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </HBox.margin>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#btnConfirmOrderOnAction" prefHeight="27.0" prefWidth="124.0" style="-fx-background-radius: 15;" styleClass="btn-solid-orange" stylesheets="@../css/Styles.css" text="Confirm Order" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </HBox.margin>
-                        </JFXButton>
+                        </VBox>
                      </children>
                   </HBox>
                </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
-               </padding>
             </VBox>
          </children>
       </HBox>
